@@ -25,7 +25,7 @@ const Services = () => {
                             <div className="service-item rounded pt-3">
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-location-dot text-primary mb-4"></i>
-                                    <h5>Accurate Trip Planning</h5>
+                                    <h5>Convenient Trip Planning</h5>
                                     <p>Perfectly utilize your free time by planning your trip with us</p>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@ const Services = () => {
                             <div className="service-item rounded pt-3">
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-gears text-primary mb-4"></i>
-                                    <h5>Best Place Recommendations</h5>
+                                    <h5>Place Recommendations</h5>
                                     <p>Recommends you with best places to visit in short amount of time</p>
                                 </div>
                             </div>

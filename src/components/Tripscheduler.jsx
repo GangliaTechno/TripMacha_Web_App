@@ -69,7 +69,8 @@ const Tripscheduler = () => {
             {
                 const durationInMilliseconds = Math.abs(end - start);
                 const durationInMinutes = Math.floor(durationInMilliseconds / 60000);
-                setDuration(durationInMinutes);
+                const durationInHours=durationInMinutes/60;//Tmrw
+                setDuration(durationInHours);
             }
             else
             {
@@ -143,12 +144,12 @@ const Tripscheduler = () => {
     return (
         <>
             {/* Scheduler Section Starts */}
-            <div className="container-xxl py5">
-                <div className="container">
-                    <div className="scheduler p-5">
+            <div className="container-xxl py5" style={{paddingLeft:"0px",paddingRight:"0px"}}>
+                <div className="container" style={{marginLeft: "0px", margginRight: "0px",paddingLeft: "0px", paddingRight: "0px", maxWidth: "100%"}}>
+                    <div className="scheduler p-5 mt-md-0" style={{marginTop: "-100px"}}>
                         <div className="row g-5 align-items-center">
-                            <div className="col-md-6 text-white">
-                                <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_jPzsCvnzVC.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                            <div className="col-md-6">
+                                <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_IzOUkXgvK9.json" style={{marginTop: "50px"}} background="transparent" speed="1" loop autoplay></lottie-player>
                             </div>
                             <div className="col-md-6">
                                 <h1 className="text-white mb-4 text-center">Schedule a Trip Plan</h1>
@@ -187,7 +188,7 @@ const Tripscheduler = () => {
                                         <div className="col-12">
                                             <div className="form-floating">
                                                 <input type="text" className=" form-control bg-transparent shadow-none text-white" id="duration" placeholder="Duration(in minutes)" value={duration} disabled></input>
-                                                <label for="duration" className="text-white">Duration (in minutes)</label>
+                                                <label for="duration" className="text-white">Duration ( HH:MM )</label>
                                             </div>
                                         </div>
                                         <div className="col-12">

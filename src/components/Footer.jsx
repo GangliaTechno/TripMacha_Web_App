@@ -14,7 +14,7 @@ const Footer = () => {
                             <a href="https://www.ganglia.in/about-1" target="_blank" className="btn btn-link shadow-none">About us</a>
                             <a href="https://www.ganglia.in/" target="_blank" className="btn btn-link shadow-none">Contact Us</a>
                             <a href="#" className="btn btn-link shadow-none" target="_blank">Privacy Policy</a>
-                            <a href="Terms_Condition.html" className="btn btn-link shadow-none" target="_blank">Terms & Condition</a>
+                            <a href="#" className="btn btn-link shadow-none" target="_blank">Terms & Condition</a>
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <h4 className="text-white mb-3">Contact</h4>
@@ -23,13 +23,16 @@ const Footer = () => {
                             <p className="mb-2"><i className="fa fa-envelope me-2"></i>director@ganglia.in</p>
                         </div>
                         <div className="col-lg-3 col-md-6">
-                            <h4 className="text-white mb-3">Follow us on</h4>
+                            <h4 className="text-white mb-3">Get in touch with us</h4>
                             <div className="row g-2 pt-2">
+                                <div className="col-3">
+                                    <a href="https://wa.me/9449584493" target="_blank" className="btn btn-outline-light btn-social shadow-none"><i class="fa-brands fa-whatsapp"></i></a>
+                                </div>
                                 <div className="col-3">
                                     <a href="#" target="_blank" className="btn btn-outline-light btn-social shadow-none"><i className="fab fa-twitter"></i></a>
                                 </div>
                                 <div className="col-3">
-                                    <a href="#" target="_blank" className="btn btn-outline-light btn-social shadow-none"><i className="fab fa-facebook"></i></a>
+                                    <a href="https://www.facebook.com/people/Ganglia-Technologies/100094390417846/?mibextid=ZbWKwL" target="_blank" className="btn btn-outline-light btn-social shadow-none"><i className="fab fa-facebook"></i></a>
                                 </div>
                                 <div className="col-3">
                                     <a href="https://www.linkedin.com/in/ganglia-technologies-973684278" target="_blank" className="btn btn-outline-light btn-social shadow-none"><i className="fab fa-linkedin-in"></i></a>
@@ -43,7 +46,7 @@ const Footer = () => {
                                     <a href="#" target="_blank" className="glink shadow-none"><img src={googleImage} width="150px" height="65px" alt="Google Play Store" /></a>
                                 </div>
                                 <div className="col-7">
-                                    <a href="#" target="_blank" className="glink shadow-none"><img src={appleImage} style={{ backgroundColor: "white", borderRadius: "6px", marginLeft: "9px", border: "1px solid grey"}} width="133px" height="43px" alt="App Store" />
+                                    <a href="#" target="_blank" className="glink shadow-none"><img src={appleImage} style={{ backgroundColor: "white", borderRadius: "6px", marginLeft: "9px", border: "1px solid grey" }} width="133px" height="43px" alt="App Store" />
                                     </a>
                                 </div>
                             </div>

@@ -189,7 +189,7 @@ nav{
 /* Destination Section Ends */
 /* Trip Scheduler Section Starts */
 .scheduler{
-    background: linear-gradient(rgba(15,23,43,0.7), rgba(15, 23, 43, 0.7)), url(../img/booking.jpg);
+    background: linear-gradient(rgba(15,23,43,0.7), rgba(15, 23, 43, 0.7)), url(../img/bg-hero.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -287,27 +287,17 @@ nav{
     transform: scale(1.1);
 }
 /* Footer Section Ends */
-.back-to-top {
-    position: fixed;
-    display: none;
-    right: 45px;
-    bottom: 45px;
-    z-index: 99;
-}
 #contact{
-    margin-top: 150px;
+    margin-top: 80px;
 }
 #services{
-    margin-top: 150px;
+    margin-top: 80px;
 }
 #scheduler{
     margin-top: 150px;
 }
 #recommendation{
-    margin-top: 150px;
-}
-#about{
-    margin-top: 150px;
+    margin-top: 100px;
 }
 .social-login{
     display: flex;
@@ -420,7 +410,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 input[type="time"]::-webkit-calendar-picker-indicator {
     filter:invert(1);
 }
-
 /* Form Pop-up */
 .popup {
     width:325px;
@@ -441,4 +430,16 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .popup h2{
     margin-top: 10px;
+}
+/* Navigation Z-index */
+nav{
+    z-index: 999;
+}
+/* Back-To-Top */
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
 }
