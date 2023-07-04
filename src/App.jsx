@@ -24,8 +24,8 @@ function App() {
           {/* Navigation bar */}
           <Navbar/>
 
-          {/* Hero Section */}
-          <Herosection/>
+          {/* Hero Section
+          <Herosection/> */}
         </div>
       </section>
       {/* Home Section ends */}
