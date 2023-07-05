@@ -13,12 +13,7 @@ const Popup = () => {
                     <p>Your Message has been sent successfully!</p>
                 </div>
             </div>
-            {/* <div className="popup" id="popup">
-                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_ctvgysft.json" background="transparent" speed="1" style={{ width: "300px", height: "240px" }} loop autoplay></lottie-player>
-                <h2>Thank You</h2>
-                <p>Your Message has been sent successfully!</p>
-            </div> */}
-    {/* Pop Up Ends */ }+
+            {/* Pop Up Ends */}
         </>
     )
 }

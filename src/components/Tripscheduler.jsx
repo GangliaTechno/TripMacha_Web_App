@@ -7,6 +7,7 @@ const Tripscheduler = () => {
     const [latitude, setLatitude] = useState(null);
     const [longitude, setLongitude] = useState(null);
     const [placeName, setPlaceName] = useState('');
+    const [radius, setRadius]=useState();
 
     const [currentDate, setCurrentDate] = useState('');
     const [fromTime, setFromTime] = useState('');
@@ -40,7 +41,7 @@ const Tripscheduler = () => {
     }, []);
     /* On Page Load Location will be populated in Location TextBox Ends */
 
-    /* On Page Load Current Date will be populated in Date TextBox Starts */
+    /* On Page Load Current Date/Radius will be populated in Date/Radius TextBox Starts */
     useEffect(() => {
 
         const currentDateTime = new Date();
@@ -48,8 +49,12 @@ const Tripscheduler = () => {
         setFromTime(formattedFromTime);
         setToTime(formattedFromTime);
 
+        const radius=10;
+        setRadius(radius)
+
     }, []);
-    /* On Page Load Current Date will be populated in Date TextBox Ends */
+    /* On Page Load Current Date/Radius will be populated in Date/Radius TextBox Ends */
+
 
     const handleTimeChange = (e) => {
         if (e.target.id === 'ftime') {
@@ -164,7 +169,7 @@ const Tripscheduler = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="number" className="form-control bg-transparent shadow-none text-white" id="radius" value="10" placeholder="Within distance" max="60" min="10"></input>
+                                                <input type="number" className="form-control bg-transparent shadow-none text-white" id="radius" value={radius} onChange={(e)=>setRadius(e.target.value)} placeholder="Within distance" max="60" min="10"></input>
                                                 <label for="radius" className="text-white fradius">Within the Radius of (Km)</label>
                                             </div>
                                         </div>

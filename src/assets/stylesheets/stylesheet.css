@@ -230,6 +230,22 @@ nav{
 .footer .btn.btn-social:hover{
     color: var(--primary);
 }
+.footer .btn.btn-social-watsapp{
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    border: 1px solid white;
+    transition: 0.3s;
+    border-radius: 35px;
+    font-weight: normal;
+}
+.footer .btn.btn-social-watsapp:hover{
+    color: rgb(0, 255, 0);
+}
 .footer .btn.btn-link{
     display: block;
     margin-bottom: 5px;

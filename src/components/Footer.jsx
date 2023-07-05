@@ -14,7 +14,7 @@ const Footer = () => {
                             <a href="https://www.ganglia.in/about-1" target="_blank" className="btn btn-link shadow-none">About us</a>
                             <a href="https://www.ganglia.in/" target="_blank" className="btn btn-link shadow-none">Contact Us</a>
                             <a href="#" className="btn btn-link shadow-none" target="_blank">Privacy Policy</a>
-                            <a href="#" className="btn btn-link shadow-none" target="_blank">Terms & Condition</a>
+                            <a href="src\components\Terms_and_Condition.html" className="btn btn-link shadow-none" target="_blank">Terms & Condition</a>
                         </div>
                         <div className="col-lg-3 col-md-6">
                             <h4 className="text-white mb-3">Contact</h4>
@@ -26,7 +26,7 @@ const Footer = () => {
                             <h4 className="text-white mb-3">Get in touch with us</h4>
                             <div className="row g-2 pt-2">
                                 <div className="col-3">
-                                    <a href="https://wa.me/9449584493" target="_blank" className="btn btn-outline-light btn-social shadow-none"><i class="fa-brands fa-whatsapp"></i></a>
+                                    <a href="https://wa.me/9449584493" target="_blank" className="btn btn-outline-light btn-social-watsapp shadow-none"><i class="fa-brands fa-whatsapp"></i></a>
                                 </div>
                                 <div className="col-3">
                                     <a href="#" target="_blank" className="btn btn-outline-light btn-social shadow-none"><i className="fab fa-twitter"></i></a>
