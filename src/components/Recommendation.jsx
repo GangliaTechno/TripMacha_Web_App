@@ -11,7 +11,6 @@ const Recommendation = () => {
     return (
         <>
             {/* Recommendations Section Starts */}
-
             <div className="container-xxl py5 destination">
                 <div className="container">
                     <div className="text-center">
@@ -24,21 +23,21 @@ const Recommendation = () => {
                                 <div className="col-lg-12 col-md-12">
                                     <a href="#" className="d-block position-relative overflow-hidden">
                                         <img src={image1} alt="Historical" className="img-fluid"></img>
-                                        <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Historical Places</div>
+                                        <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Heritage Sites</div>
                                     </a>
                                 </div>
 
                                 <div className="col-lg-6 col-md-12">
                                     <a href="#" className="d-block position-relative overflow-hidden">
                                         <img src={image2} alt="Religious" className="img-fluid"></img>
-                                        <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Religious Places</div>
+                                        <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Spiritual Centers</div>
                                     </a>
                                 </div>
 
                                 <div className="col-lg-6 col-md-12">
                                     <a href="#" className="d-block position-relative overflow-hidden">
                                         <img src={image3} alt="Beaches" className="img-fluid"></img>
-                                        <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Beaches</div>
+                                        <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Sea Shore</div>
                                     </a>
                                 </div>
                             </div>
@@ -46,19 +45,19 @@ const Recommendation = () => {
                         <div className="col-lg-5 col-md-6" style={{ minHeight: "350px" }}>
                             <a href="#" className="d-block position-relative h-100 overflow-hidden">
                                 <img src={image4} alt="Adventure Park" className="img-fluid position-absolute w-100 h-100" style={{ objectFit: "cover" }}></img>
-                                <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Adventure Park</div>
+                                <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Adventure Land</div>
                             </a>
                         </div>
                         <div className="col-lg-5 col-md-6" style={{ minHeight: "350px" }}>
                             <a href="#" className="d-block position-relative h-100 overflow-hidden">
                                 <img src={image5} alt="Adventure Park" className="img-fluid position-absolute w-100 h-100" style={{ objectFit: "cover" }}></img>
-                                <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Adventure Park</div>
+                                <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Amusemant Park</div>
                             </a>
                         </div>
                         <div className="col-lg-5 col-md-6" style={{ minHeight: "350px" }}>
                             <a href="#" className="d-block position-relative h-100 overflow-hidden">
                                 <img src={image6} alt="Adventure Park" className="img-fluid position-absolute w-100 h-100" style={{ objectFit: "cover" }}></img>
-                                <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Adventure Park</div>
+                                <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">Museum Complex</div>
                             </a>
                         </div>
                     </div>

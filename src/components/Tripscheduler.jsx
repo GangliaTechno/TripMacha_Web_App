@@ -65,22 +65,23 @@ const Tripscheduler = () => {
         const calculateDuration = () => {
             const start = new Date(`2000/01/01 ${fromTime}`);
             const end = new Date(`2000/01/01 ${toTime}`);
-            if(start<=end)
-            {
+            if (start <= end) {
                 const durationInMilliseconds = Math.abs(end - start);
                 const durationInMinutes = Math.floor(durationInMilliseconds / 60000);
-                const durationInHours=durationInMinutes/60;//Tmrw
-                setDuration(durationInHours);
+                const durationInHours = durationInMinutes / 60;
+                const hours = Math.floor(durationInHours);
+                const minutes = Math.round((durationInHours - hours) * 60);
+                const result = hours + " Hour, " + minutes + " Minutes";
+                setDuration(result);
             }
-            else
-            {
+            else {
                 alert("From Time should be Less Than To Time!");
                 const currentDateTime = new Date();
                 const formattedFromTime = currentDateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
                 setFromTime(formattedFromTime);
                 setToTime(formattedFromTime);
             }
-            
+
         };
         calculateDuration();
     }, [fromTime, toTime]);
@@ -144,12 +145,12 @@ const Tripscheduler = () => {
     return (
         <>
             {/* Scheduler Section Starts */}
-            <div className="container-xxl py5" style={{paddingLeft:"0px",paddingRight:"0px"}}>
-                <div className="container" style={{marginLeft: "0px", margginRight: "0px",paddingLeft: "0px", paddingRight: "0px", maxWidth: "100%"}}>
-                    <div className="scheduler p-5 mt-md-0" style={{marginTop: "-100px"}}>
+            <div className="container-xxl py5" style={{ paddingLeft: "0px", paddingRight: "0px" }}>
+                <div className="container" style={{ marginLeft: "0px", marginRight: "0px", paddingLeft: "0px", paddingRight: "0px", maxWidth: "100%" }}>
+                    <div className="scheduler p-5 mt-md-0" style={{ marginTop: "-100px" }}>
                         <div className="row g-5 align-items-center">
                             <div className="col-md-6">
-                                <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_IzOUkXgvK9.json" style={{marginTop: "50px"}} background="transparent" speed="1" loop autoplay></lottie-player>
+                                <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_IzOUkXgvK9.json" style={{ marginTop: "50px" }} background="transparent" speed="1" loop autoplay></lottie-player>
                             </div>
                             <div className="col-md-6">
                                 <h1 className="text-white mb-4 text-center">Schedule a Trip Plan</h1>
@@ -188,7 +189,7 @@ const Tripscheduler = () => {
                                         <div className="col-12">
                                             <div className="form-floating">
                                                 <input type="text" className=" form-control bg-transparent shadow-none text-white" id="duration" placeholder="Duration(in minutes)" value={duration} disabled></input>
-                                                <label for="duration" className="text-white">Duration ( HH:MM )</label>
+                                                <label for="duration" className="text-white">Duration</label>
                                             </div>
                                         </div>
                                         <div className="col-12">

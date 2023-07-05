@@ -11,15 +11,6 @@ const Services = () => {
                         <h2 className="mb-5">We Offer Our Best Services To Plan Your Trip</h2>
                     </div>
                     <div className="row g-4">
-                        <div className="col-lg-4 col-sm-6">
-                            <div className="service-item rounded pt-3">
-                                <div className="p-4">
-                                    <i className="fa fa-3x fa-globe text-primary mb-4"></i>
-                                    <h5>Quick Trip Plans</h5>
-                                    <p>Based on the Current Location<br />Plans a perfect iternary plan</p>
-                                </div>
-                            </div>
-                        </div>
 
                         <div className="col-lg-4 col-sm-6">
                             <div className="service-item rounded pt-3">
