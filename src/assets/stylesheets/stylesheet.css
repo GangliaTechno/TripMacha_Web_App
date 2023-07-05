@@ -417,9 +417,6 @@ nav{
     background-color: #f0f0f0;
     color: black;
 }
-.loginGuestDD{
-    display: none;
-}
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter:invert(1);
 }

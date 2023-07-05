@@ -6,8 +6,9 @@ import Services from './components/Services'
 import Contactus from './components/Contactus'
 import Footer from './components/Footer'
 import Login from './components/Login'
-import React, { useRef } from 'react';
+import React from 'react';
 import Backtotop from './components/Backtotop'
+import { AuthProvider } from './context/AuthContext'
 
 function App() {
 
@@ -17,8 +18,9 @@ function App() {
       <section id="home">
         <div className="container-fluid position-relative p-0">
           {/* Navigation bar */}
-          <Navbar />
-
+          <AuthProvider>
+            <Navbar />
+          </AuthProvider>
           {/* Trip Scheduler Plan */}
           <Tripscheduler />
         </div>
@@ -48,6 +50,7 @@ function App() {
 
       {/* Login/SignUp Modal starts */}
       <Login />
+
       {/* Login/SignUp Modal ends */}
 
       {/* Back To Top starts*/}
