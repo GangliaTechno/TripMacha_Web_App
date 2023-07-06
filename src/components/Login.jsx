@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
 import guestImage from '../assets/img/user.png'
 import { useAuth } from '../context/AuthContext'
 
 const Login = () => {
 
-    const [visible,setVisible]=useState(true);
-    const removeElement=()=>{
-        setVisible((prev)=>!prev);
-    };
+    const closebtnRef=useRef();
+    const autoCloseClick=()=>{
+        closebtnRef.current.click();
+    }
+
     const {
         isLoggedIn,
         setIsLoggedIn
@@ -16,19 +17,19 @@ const Login = () => {
     const logIn = (e) => {
         e.preventDefault();
         setIsLoggedIn(true);
-        window.sessionStorage.setItem('isLoggedIn','true')
+        window.sessionStorage.setItem('isLoggedIn', 'true')
+        autoCloseClick();
     }
 
     return (
         <>
             {/* Login/Sign Up Modal Starts */}
-
             <div className="modal fade" id="SignupSigninModal" tabindex="-1" role="dialog" aria-labelledby="SignupSigninModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h4 className="modal-title w-100 text-center" id="exampleModalLongTitle">Login/SignIn</h4>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" ref={closebtnRef} className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -38,7 +39,7 @@ const Login = () => {
                             </div>
                             <div className="row">
                                 <div className="col-md-12 mt-3">
-                                    <a onClick={(e)=>{logIn(e)}} className="btn-lg btn-guest rounded-pill btn-block text-uppercase fs-6" href="#" id="btnGuest"><img src={guestImage} className="mb-1 me-2" />Continue as Guest</a>
+                                    <a onClick={(e) => { logIn(e)}} className="btn-lg btn-guest rounded-pill btn-block text-uppercase fs-6" href="#" id="btnGuest"><img src={guestImage} className="mb-1 me-2" />Continue as Guest</a>
                                 </div>
                                 <p className="loginOR mt-3">OR</p>
                                 <div className="col-md-12">
