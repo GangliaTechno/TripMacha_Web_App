@@ -12,7 +12,7 @@ const Navbar = () => {
     const logOut = (e) => {
         e.preventDefault();
         setIsLoggedIn(false);
-        window.sessionStorage.setItem('isLoggedIn','false')
+        window.sessionStorage.setItem('isLoggedIn', 'false')
     }
 
     return (
@@ -39,7 +39,7 @@ const Navbar = () => {
                                     Guest
                                 </a>
                                 <div className="dropdown-menu" style={{ right: "0", minWidth: "0", marginRight: "-26px", width: "103px" }}>
-                                    <a onClick={(e)=>{logOut(e)}} className="dropdown-item bg-transparent" href="#" id="btnlogout">Logout</a>
+                                    <a onClick={(e) => { logOut(e) }} className="dropdown-item bg-transparent" href="#" id="btnlogout">Logout</a>
                                 </div>
                             </li>
                         ) :

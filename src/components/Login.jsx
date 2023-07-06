@@ -10,7 +10,6 @@ const Login = () => {
     }
 
     const {
-        isLoggedIn,
         setIsLoggedIn
     } = useAuth();
 
