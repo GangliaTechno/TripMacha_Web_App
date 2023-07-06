@@ -1,29 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import guestImage from '../assets/img/user.png'
-// import { useAuth } from '../context/AuthContext'
+import { useAuth } from '../context/AuthContext'
 
 const Login = () => {
 
-    // const {
-    //     authUser,
-    //     setAuthUser,
-    //     isLoggedIn,
-    //     setIsLoggedIn
-    // } = useAuth();
+    const [visible,setVisible]=useState(true);
+    const removeElement=()=>{
+        setVisible((prev)=>!prev);
+    };
+    const {
+        isLoggedIn,
+        setIsLoggedIn
+    } = useAuth();
 
-    // const logIn = (e) => {
-    //     e.preventDefault();
-    //     setIsLoggedIn(true);
-    //     setAuthUser({
-    //         Name: 'Guest'
-    //     })
-    // }
-
-    // const logOut = (e) => {
-    //     e.preventDefault();
-    //     setIsLoggedIn(false);
-    //     setAuthUser(null);
-    // }
+    const logIn = (e) => {
+        e.preventDefault();
+        setIsLoggedIn(true);
+        window.sessionStorage.setItem('isLoggedIn','true')
+    }
 
     return (
         <>
@@ -44,7 +38,7 @@ const Login = () => {
                             </div>
                             <div className="row">
                                 <div className="col-md-12 mt-3">
-                                    <a className="btn-lg btn-guest rounded-pill btn-block text-uppercase fs-6" href="#" id="btnGuest"><img src={guestImage} className="mb-1 me-2" />Continue as Guest</a>
+                                    <a onClick={(e)=>{logIn(e)}} className="btn-lg btn-guest rounded-pill btn-block text-uppercase fs-6" href="#" id="btnGuest"><img src={guestImage} className="mb-1 me-2" />Continue as Guest</a>
                                 </div>
                                 <p className="loginOR mt-3">OR</p>
                                 <div className="col-md-12">

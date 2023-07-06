@@ -17,9 +17,12 @@ function App() {
       {/* Home Section starts */}
       <section id="home">
         <div className="container-fluid position-relative p-0">
-          {/* Navigation bar */}
           <AuthProvider>
+            {/* Navigation bar */}
             <Navbar />
+
+            {/* Login/SignUp Modal */}
+            <Login />
           </AuthProvider>
           {/* Trip Scheduler Plan */}
           <Tripscheduler />
@@ -47,11 +50,6 @@ function App() {
       {/* Footer Section starts */}
       <Footer />
       {/* Footer Section ends */}
-
-      {/* Login/SignUp Modal starts */}
-      <Login />
-
-      {/* Login/SignUp Modal ends */}
 
       {/* Back To Top starts*/}
       <Backtotop />

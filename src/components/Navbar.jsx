@@ -4,8 +4,15 @@ import { useAuth } from '../context/AuthContext'
 const Navbar = () => {
 
     const {
-        isLoggedIn
+        isLoggedIn,
+        setIsLoggedIn
     } = useAuth();
+
+    const logOut = (e) => {
+        e.preventDefault();
+        setIsLoggedIn(false);
+        window.sessionStorage.setItem('isLoggedIn','false')
+    }
 
     return (
         <>
@@ -25,20 +32,19 @@ const Navbar = () => {
                         <a href="#contact" className="nav-item nav-link">Contact us</a>
                     </div>
                     {
-                        isLoggedIn ? (
+                        (isLoggedIn) ? (
                             <li className="nav-item dropdown" id="loginGuestDD">
                                 <a className="nav-link dropdown-toggle fs-5 px-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Guest
                                 </a>
-                                <div className="dropdown-menu" style={{ right: "0", left: "auto", minWidth: "0", marginRight: "-26px", width: "103px" }}>
-                                    <a className="dropdown-item bg-transparent" href="#" id="btnlogout">Logout</a>
+                                <div className="dropdown-menu" style={{ right: "0", minWidth: "0", marginRight: "-26px", width: "103px" }}>
+                                    <a onClick={(e)=>{logOut(e)}} className="dropdown-item bg-transparent" href="#" id="btnlogout">Logout</a>
                                 </div>
                             </li>
-                        ) : 
-                        (
-                            <button type="button" id="btnlogin" className="btn btn-outline-primary py-2 px-4 shadow-none" data-toggle="modal" data-target="#SignupSigninModal">Login/Signup</button>
-
-                        )
+                        ) :
+                            (
+                                <button type="button" id="btnlogin" className="btn btn-outline-primary py-2 px-4 shadow-none" data-toggle="modal" data-target="#SignupSigninModal">Login/Signup</button>
+                            )
                     }
                 </div>
             </nav>
