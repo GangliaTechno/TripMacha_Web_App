@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import guestImage from '../assets/img/user.png'
 import { useAuth } from '../context/AuthContext'
 import { auth, provider } from '../FirebaseConfig'
@@ -40,6 +40,7 @@ const Login = () => {
     }
 
     //SignIn with Guest or Anonymous
+ 
     const handleAnonymousSignIn = async () => {
 
         if (!isLoggedIn) {
