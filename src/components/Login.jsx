@@ -29,17 +29,13 @@ const Login = () => {
                 setAuthUser(result.user)
 
                 //Storing Username and UserID in Session
-                window.sessionStorage.setItem('displayUserName', authUser.displayName);
-                window.sessionStorage.setItem('uId', authUser.uId);
+                window.sessionStorage.setItem('GoogleUsername', result.user.displayName);
+                window.sessionStorage.setItem('UID', result.user.uid);
                 autoCloseClick();
             }
             catch (error) {
                 console.log(error)
             }
-        }
-        else
-        {
-            window.s
         }
     }
 
