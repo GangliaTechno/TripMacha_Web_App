@@ -27,7 +27,7 @@ const Login = () => {
             try {
                 const result = await signInWithPopup(auth, provider);
                 setAuthUser(result.user)
-
+                setIsLoggedIn(true);
                 //Storing Username and UserID in Session
                 window.sessionStorage.setItem('GoogleUsername', result.user.displayName);
                 window.sessionStorage.setItem('UID', result.user.uid);
@@ -40,23 +40,21 @@ const Login = () => {
     }
 
     //SignIn with Guest or Anonymous
-    const [isAnonymousLogin, setIsAnonymousLogin] = useState(null);
-    const [anonymousUID, setAnonymousUID] = useState(null);
     const handleAnonymousSignIn = async () => {
-        try {
-            const result = await signInAnonymously(auth);
-            setIsAnonymousLogin(result.user.isAnonymous);
-            setAnonymousUID(result.user.uid);
 
-            console.log(isAnonymousLogin);
-            console.log(anonymousUID);
-            //Storing isAnonymousLogin and UserID in Session
-            window.sessionStorage.setItem('isAnonymousLogin', isAnonymousLogin);
-            window.sessionStorage.setItem('anonymousUID', anonymousUID);
-            autoCloseClick();
-        }
-        catch (error) {
-            console.log(error)
+        if (!isLoggedIn) {
+            try {
+                const result = await signInAnonymously(auth);
+                setAuthUser(result.user);
+                setIsLoggedIn(true);
+                //Storing isAnonymousLogin and UserID in Session
+                window.sessionStorage.setItem('isAnonymousLogin', result.user.isAnonymous);
+                window.sessionStorage.setItem('anonymousUID', result.user.uid);
+                autoCloseClick();
+            }
+            catch (error) {
+                console.log(error)
+            }
         }
     }
 
