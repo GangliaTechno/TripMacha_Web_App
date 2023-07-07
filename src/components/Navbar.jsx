@@ -11,7 +11,6 @@ const Navbar = () => {
     } = useAuth();
 
     const logOut = (e) => {
-        e.preventDefault();
         setAuthUser(null);
         window.sessionStorage.setItem('authUser', null);
     }
