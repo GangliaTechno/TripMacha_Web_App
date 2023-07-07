@@ -26,11 +26,10 @@ const Login = () => {
         if (!isLoggedIn) {
             try {
                 const result = await signInWithPopup(auth, provider);
-                setAuthUser(result.user)
                 setIsLoggedIn(true);
                 //Storing Username and UserID in Session
-                window.sessionStorage.setItem('GoogleUsername', result.user.displayName);
-                window.sessionStorage.setItem('UID', result.user.uid);
+                window.sessionStorage.setItem('authUser', JSON.stringify(result.user));
+                setAuthUser(JSON.parse(window.sessionStorage.getItem('authUser')));
                 autoCloseClick();
             }
             catch (error) {
@@ -40,17 +39,16 @@ const Login = () => {
     }
 
     //SignIn with Guest or Anonymous
- 
     const handleAnonymousSignIn = async () => {
 
         if (!isLoggedIn) {
             try {
                 const result = await signInAnonymously(auth);
-                setAuthUser(result.user);
                 setIsLoggedIn(true);
+
                 //Storing isAnonymousLogin and UserID in Session
-                window.sessionStorage.setItem('isAnonymousLogin', result.user.isAnonymous);
-                window.sessionStorage.setItem('anonymousUID', result.user.uid);
+                window.sessionStorage.setItem('authUser', JSON.stringify(result.user));
+                setAuthUser(JSON.parse(window.sessionStorage.getItem('authUser')));
                 autoCloseClick();
             }
             catch (error) {
