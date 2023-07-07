@@ -13,6 +13,7 @@ const Navbar = () => {
     const logOut = (e) => {
         setAuthUser(null);
         window.sessionStorage.setItem('authUser', null);
+        window.location.reload();
     }
 
     useEffect(() => {
