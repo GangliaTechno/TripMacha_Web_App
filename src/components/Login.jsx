@@ -78,6 +78,7 @@ const Login = () => {
                                     <a onClick={handleAnonymousSignIn} className="btn-lg btn-guest rounded-pill btn-block text-uppercase fs-6" href="#" id="btnGuest"><img src={guestImage} className="mb-1 me-2" />Continue as Guest</a>
                                 </div>
                                 <p className="loginOR mt-3">OR</p>
+                                <p className='text-center'>For Better Experience, Login/SignIn</p>
                                 <div className="col-md-12">
                                     <a onClick={handleGoogleSignIn} className="btn-lg btn-google rounded-pill btn-block text-uppercase fs-6" href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="27" height="27" viewBox="0 0 48 48" className="mb-1 me-2">

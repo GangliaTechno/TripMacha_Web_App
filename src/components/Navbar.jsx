@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect , useRef} from 'react'
 import { useAuth } from '../context/AuthContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faClockRotateLeft, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+
 const Navbar = () => {
 
     const {
@@ -17,7 +18,13 @@ const Navbar = () => {
         window.location.reload();
     }
 
+    const loginbtnRef = useRef();
+    const autoOpenClick = () => {
+        loginbtnRef.current.click();
+    }
+
     useEffect(() => {
+        autoOpenClick();
         setAuthUser(JSON.parse(window.sessionStorage.getItem('authUser')))
     }, []);
 
@@ -72,7 +79,7 @@ const Navbar = () => {
                                 )
                         ) :
                             (
-                                <button type="button" id="btnlogin" className="btn btn-outline-primary py-2 px-4 shadow-none" data-toggle="modal" data-target="#SignupSigninModal">Login/Signup</button>
+                                <button type="button" ref={loginbtnRef} className="btn btn-outline-primary py-2 px-4 shadow-none" data-toggle="modal" data-target="#SignupSigninModal" data-backdrop="false">Login/Signup</button>
                             )
                     }
 
