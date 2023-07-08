@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useAuth } from '../context/AuthContext'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faThumbsUp, faClockRotateLeft, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 const Navbar = () => {
 
     const {
@@ -40,20 +41,32 @@ const Navbar = () => {
                     {
                         (authUser) ? (
                             (authUser.isAnonymous === true) ?
-                                (<li className="nav-item dropdown" id="loginGuestDD">
-                                    <a className="nav-link dropdown-toggle fs-5 px-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Guest
-                                    </a>
-                                    <div className="dropdown-menu" style={{ right: "0", minWidth: "0", marginRight: "-26px", width: "103px" }}>
-                                        <a onClick={(e) => { logOut(e) }} className="dropdown-item bg-transparent" href="#" id="btnlogout">Logout</a>
-                                    </div>
-                                </li>) : (
+                                (
+                                    <li className="nav-item dropdown" id="loginGuestDD">
+                                        <a className="nav-link dropdown-toggle fs-5 px-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Guest
+                                        </a>
+                                        <div className="dropdown-menu" style={{ right: "0", minWidth: "0", marginRight: "-26px", width: "103px" }}>
+                                            <a onClick={(e) => { logOut(e) }} className="dropdown-item bg-transparent" href="#" id="btnlogout">Logout</a>
+                                        </div>
+                                    </li>
+                                ) : (
                                     <li className="nav-item dropdown" id="loginGuestDD">
                                         <a className="nav-link dropdown-toggle fs-5 px-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             {authUser.displayName}
                                         </a>
-                                        <div className="dropdown-menu" style={{ right: "0", minWidth: "0", marginRight: "-26px", width: "103px" }}>
-                                            <a onClick={(e) => { logOut(e) }} className="dropdown-item bg-transparent" href="#" id="btnlogout">Logout</a>
+                                        <div className="dropdown-menu" style={{ right: "0", minWidth: "0", marginRight: "-26px", width: "200px" }}>
+                                            <div className="text-center">
+                                                <img className="mt-2 rounded-circle" src={authUser.photoURL} alt="profilePhoto" style={{ width: "50px", height: "48px", border: "3px solid #8f96d4" }} />
+                                                <p className="mt-2 font-weight-bold">{authUser.displayName}</p>
+                                            </div>
+                                            <hr />
+                                            <div className="text-center">
+                                                <a href="#" className="text-decoration-none text-capitalize linkhover"><FontAwesomeIcon style={{ marginRight: "10px" }} icon={faThumbsUp} />Liked Iternery</a><br /><br />
+                                                <a href="#" className="text-decoration-none text-capitalize linkhover"><FontAwesomeIcon style={{ marginRight: "10px" }} icon={faClockRotateLeft} />Saved History</a>
+                                            </div>
+                                            <hr />
+                                            <a onClick={(e) => { logOut(e) }} className="dropdown-item bg-transparent text-center linkhover" href="#" id="btnlogout"><FontAwesomeIcon style={{ marginRight: "10px" }} icon={faArrowRightFromBracket} />Logout</a>
                                         </div>
                                     </li>
                                 )
@@ -62,6 +75,7 @@ const Navbar = () => {
                                 <button type="button" id="btnlogin" className="btn btn-outline-primary py-2 px-4 shadow-none" data-toggle="modal" data-target="#SignupSigninModal">Login/Signup</button>
                             )
                     }
+
                 </div>
             </nav>
             {/* Navigation bar ends */}

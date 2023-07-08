@@ -456,3 +456,9 @@ nav{
     bottom: 45px;
     z-index: 99;
 }
+.linkhover{
+    color: black;
+}
+.linkhover:hover{
+    color: #121c77;
+}
