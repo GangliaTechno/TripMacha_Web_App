@@ -50,7 +50,6 @@ const Footer = () => {
                                     </a>
                                 </div>
                             </div>
-                            <svg></svg>
                         </div>
                     </div>
                 </div>
