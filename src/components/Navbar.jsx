@@ -19,21 +19,21 @@ const Navbar = () => {
         window.location.reload();
     }
 
+    //Taking the reference of login button and clicking it automatically upon loading
     const loginbtnRef = useRef();
     const autoOpenClick = () => {
         loginbtnRef.current.click();
     }
 
+    //If user is already logged In then Login modal is not shown otherwise show login modal
     useEffect(() => {
-        setAuthUser(JSON.parse(window.sessionStorage.getItem('authUser')))
-        
-        if (authUser && (authUser.isAnonymous || authUser.emailVerified)) {
-            console.log('already verified')
+        if (authUser !== null) {
+            console.log("Already Logged In")
         }
         else {
             autoOpenClick();
         }
-    }, []);//ugrade
+    }, []);
 
     return (
         <>
@@ -53,7 +53,7 @@ const Navbar = () => {
                         <a href="#contact" className="nav-item nav-link">Contact us</a>
                     </div>
                     {
-                        (authUser) ? (
+                        (authUser !== null) ? (
                             (authUser.isAnonymous === true) ?
                                 (
                                     <li className="nav-item dropdown" id="loginGuestDD">

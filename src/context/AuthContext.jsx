@@ -7,7 +7,8 @@ export function useAuth() {
 }
 
 export function AuthProvider(props) {
-    const [authUser, setAuthUser] = useState(null);
+    // Fetch Userdata from session Storage if already available otherwise save null
+    const [authUser, setAuthUser] = useState(JSON.parse(window.sessionStorage.getItem('authUser')));
     const x = window.sessionStorage.getItem('isLoggedIn') === 'true' ? true : false;
     const [isLoggedIn, setIsLoggedIn] = useState(x);
 
