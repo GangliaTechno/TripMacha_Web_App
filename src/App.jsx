@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import Login from './components/Login'
 import React from 'react';
 import Backtotop from './components/Backtotop'
+import Applepopup from './components/Applepopup'
 import { AuthProvider } from './context/AuthContext'
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
             <Navbar />
 
             {/* Login/SignUp Modal */}
-            <Login />
+            <Login/>
           </AuthProvider>
           {/* Trip Scheduler Plan */}
           <Tripscheduler />
@@ -51,9 +52,9 @@ function App() {
       <Footer />
       {/* Footer Section ends */}
 
-      {/* Back To Top starts*/}
+      {/* Back To Top starts */}
       <Backtotop />
-      {/* Back To Top ends*/}
+      {/* Back To Top ends */}
     </>
   )
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faClockRotateLeft, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
-import { auth } from '../FirebaseConfig'
+import guestImage from '../assets/img/Guest.png'
 
 const Navbar = () => {
 
@@ -58,10 +58,15 @@ const Navbar = () => {
                                 (
                                     <li className="nav-item dropdown" id="loginGuestDD">
                                         <a className="nav-link dropdown-toggle fs-5 px-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Guest
+                                            Guest Login
                                         </a>
-                                        <div className="dropdown-menu" style={{ right: "0", minWidth: "0", marginRight: "-26px", width: "103px" }}>
-                                            <a onClick={(e) => { logOut(e) }} className="dropdown-item bg-transparent" href="#" id="btnlogout">Logout</a>
+                                        <div className="dropdown-menu" style={{ right: "0", minWidth: "0", marginRight: "-26px", width: "150px" }}>
+                                            <div className="text-center">
+                                                <img className="mt-2 rounded-circle" src={guestImage} alt="profilePhoto" style={{ width: "50px", height: "48px", border: "3px solid #8f96d4" }} />
+                                                <p className="mt-2 font-weight-bold">Guest Login</p>
+                                            </div>
+                                            <hr />
+                                            <a onClick={(e) => { logOut(e) }} className="dropdown-item bg-transparent text-center linkhover" href="#" id="btnlogout"><FontAwesomeIcon style={{ marginRight: "10px" }} icon={faArrowRightFromBracket} />Logout</a>
                                         </div>
                                     </li>
                                 ) : (
