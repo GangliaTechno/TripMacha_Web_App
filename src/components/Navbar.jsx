@@ -1,7 +1,8 @@
-import React, { useEffect , useRef} from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faClockRotateLeft, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { auth } from '../FirebaseConfig'
 
 const Navbar = () => {
 
@@ -24,9 +25,15 @@ const Navbar = () => {
     }
 
     useEffect(() => {
-        autoOpenClick();
         setAuthUser(JSON.parse(window.sessionStorage.getItem('authUser')))
-    }, []);
+        
+        if (authUser && (authUser.isAnonymous || authUser.emailVerified)) {
+            console.log('already verified')
+        }
+        else {
+            autoOpenClick();
+        }
+    }, []);//ugrade
 
     return (
         <>
