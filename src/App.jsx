@@ -16,40 +16,57 @@ function App() {
   return (
     <>
       <Router>
-        {/* Home Section starts */}
+        {/* Navigation bar starts*/}
         <section id="home">
           <div className="container-fluid position-relative p-0">
             <AuthProvider>
-              {/* Navigation bar */}
               <Navbar />
+
               {/* Login/SignUp Modal */}
               <Login />
             </AuthProvider>
           </div>
         </section>
-        <section>
-          {/* Trip Scheduler Plan */}
-          <Tripscheduler />
-          {/* Home Section ends */}
-        </section>
+        {/* Navigation bar ends */}
 
+        <Routes>
 
-        {/* Recommendation Section starts */}
-        <section id="recommendation">
-          <Recommendation />
-        </section>
-        {/* Recommendation Section ends */}
+          <Route exact path='/' element={
+            <>
+              {/* Trip Scheduler Plan starts */}
+              <section id="tripScheduler">
+                <Tripscheduler />
+              </section>
+              {/* Trip Scheduler Plan ends */}
 
-        {/* Service Section starts */}
-        <section id="services">
-          <Services />
-        </section>
+              {/* Recommendation Section starts */}
+              <section id="recommendation">
+                <Recommendation />
+              </section>
+              {/* Recommendation Section ends */}
 
-        {/* Contact Us Section starts */}
-        <section id="contact">
-          <Contactus />
-        </section>
-        {/* Contact Us Section ends */}
+              {/* Service Section starts */}
+              <section id="services">
+                <Services />
+              </section>
+
+              {/* Contact Us Section starts */}
+              <section id="contact">
+                <Contactus />
+              </section>
+              {/* Contact Us Section ends */}
+
+            </>}>
+          </Route>
+
+          <Route exact path='/plan' element={
+            <>
+              <h1>Plan page</h1>
+
+            </>}>
+          </Route>
+
+        </Routes>
 
         {/* Footer Section starts */}
         <Footer />
