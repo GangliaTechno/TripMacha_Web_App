@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useAuth } from '../context/AuthContext'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faClockRotateLeft, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import guestImage from '../assets/img/Guest.png'
@@ -47,10 +48,10 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <div className="navbar-nav ms-auto py-0">
-                        <a href="#home" className="nav-item nav-link active">Home</a>
-                        <a href="#recommendation" className="nav-item nav-link">Recommendations</a>
-                        <a href="#services" className="nav-item nav-link">Services</a>
-                        <a href="#contact" className="nav-item nav-link">Contact us</a>
+                        <Link to="/" className="nav-item nav-link active">Home</Link>
+                        <Link to="/recommendation" className="nav-item nav-link">Recommendations</Link>
+                        <Link to="/services" className="nav-item nav-link">Services</Link>
+                        <Link to="/contact" className="nav-item nav-link">Contact us</Link>
                     </div>
                     {
                         (authUser !== null) ? (

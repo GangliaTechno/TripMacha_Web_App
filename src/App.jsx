@@ -16,6 +16,7 @@ function App() {
   return (
     <>
       <Router>
+        
         {/* Navigation bar starts*/}
         <section id="home">
           <div className="container-fluid position-relative p-0">
@@ -49,6 +50,7 @@ function App() {
               <section id="services">
                 <Services />
               </section>
+              {/* Service Section ends */}
 
               {/* Contact Us Section starts */}
               <section id="contact">
@@ -59,10 +61,42 @@ function App() {
             </>}>
           </Route>
 
-          <Route exact path='/plan' element={
+          <Route exact path='/recommendation' element={
+            <>
+              {/* Recommendation Section starts */}
+              <section id="recommendation">
+                <Recommendation />
+              </section>
+              {/* Recommendation Section ends */}
+            </>
+          }>
+          </Route>
+
+          <Route exact path='/services' element={
+            <>
+              {/* Service Section starts */}
+              <section id="services">
+                <Services />
+              </section>
+              {/* Service Section ends */}
+            </>
+          }>
+          </Route>
+
+          <Route exact path='/contact' element={
+            <>
+              {/* Contact Us Section starts */}
+              <section id="contact">
+                <Contactus />
+              </section>
+              {/* Contact Us Section ends */}
+            </>
+          }>
+          </Route>
+
+          <Route exact path='/Tripscheduler' element={
             <>
               <h1>Plan page</h1>
-
             </>}>
           </Route>
 
@@ -75,6 +109,7 @@ function App() {
         {/* Back To Top starts */}
         <Backtotop />
         {/* Back To Top ends */}
+        
       </Router>
     </>
   )

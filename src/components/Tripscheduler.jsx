@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
 
@@ -7,7 +8,7 @@ const Tripscheduler = () => {
     const [latitude, setLatitude] = useState(null);
     const [longitude, setLongitude] = useState(null);
     const [placeName, setPlaceName] = useState('');
-    const [radius, setRadius]=useState();
+    const [radius, setRadius] = useState();
 
     const [currentDate, setCurrentDate] = useState('');
     const [fromTime, setFromTime] = useState('');
@@ -49,7 +50,7 @@ const Tripscheduler = () => {
         setFromTime(formattedFromTime);
         setToTime(formattedFromTime);
 
-        const radius=10;
+        const radius = 10;
         setRadius(radius)
 
     }, []);
@@ -169,7 +170,7 @@ const Tripscheduler = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="number" className="form-control bg-transparent shadow-none text-white" id="radius" value={radius} onChange={(e)=>setRadius(e.target.value)} placeholder="Within distance" max="60" min="10"></input>
+                                                <input type="number" className="form-control bg-transparent shadow-none text-white" id="radius" value={radius} onChange={(e) => setRadius(e.target.value)} placeholder="Within distance" max="60" min="10"></input>
                                                 <label for="radius" className="text-white fradius">Within the Radius of (Km)</label>
                                             </div>
                                         </div>
@@ -198,7 +199,9 @@ const Tripscheduler = () => {
                                             </div>
                                         </div>
                                         <div className="col-12">
-                                            <button className="btn btn-outline-light w-100 py-3 shadow-none" type="submit" id="btnlocate">Locate Now</button>
+                                            <Link to='/Tripscheduler'>
+                                                <button className="btn btn-outline-light w-100 py-3 shadow-none" type="submit" id="btnlocate">Locate Now</button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </form>

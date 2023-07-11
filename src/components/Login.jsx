@@ -63,7 +63,7 @@ const Login = () => {
     return (
         <>
             {/* Login/Sign Up Modal Starts */}
-            <div style={{ background: "rgba(0,0,0,0.5)" }} className="modal fade" id="SignupSigninModal" tabindex="-1" role="dialog" aria-labelledby="SignupSigninModalLabel" aria-hidden="true">
+            <div style={{ background: "rgba(0,0,0,0.5)" }} className="modal fade element" id="SignupSigninModal" tabindex="-1" role="dialog" aria-labelledby="SignupSigninModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
