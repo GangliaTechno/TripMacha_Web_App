@@ -2,15 +2,13 @@ import React, { useEffect, useRef, useState } from 'react'
 import guestImage from '../assets/img/user.png'
 import { useAuth } from '../context/AuthContext'
 import { auth, provider } from '../FirebaseConfig'
-import Applepopup from '../components/Applepopup'
 import { signInAnonymously, signInWithPopup } from 'firebase/auth'
 
 const Login = () => {
 
-    const [isAlertVisible, setIsAlertVisible] = React.useState(false);
-    const applepop = (e) => {
-        setIsAlertVisible(true);
-    };
+    const applepop=()=>{
+        alert("Sorry for the Inconvience.\nApple Login, Not supported Yet!");
+    }
 
     //When Login Clicked Username to be displayed 
     const {
@@ -104,10 +102,6 @@ const Login = () => {
                 </div>
             </div>
             {/* Login/Sign Up Modal Ends */}
-
-            {/* Apple Pop Up Starts */}
-            {isAlertVisible && <Applepopup />}
-            {/* Apple Pop Up Ends */}
         </>
     )
 }

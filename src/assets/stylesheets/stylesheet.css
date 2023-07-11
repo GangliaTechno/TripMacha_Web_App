@@ -462,3 +462,8 @@ nav{
 .linkhover:hover{
     color: #121c77;
 }
+@media (min-width: 1400px){
+    .container{
+        max-width: max-content;
+    }
+}

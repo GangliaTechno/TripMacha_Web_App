@@ -20,12 +20,10 @@ const Contactus = () => {
                 form.current.subject.value="";
                 form.current.message.value="";
                 setTimeout(() => {
-
                     setIsAlertVisible(false);
                 }, 1500);
             }, (error) => {
                 // show the user an error
-
             });
     };
 

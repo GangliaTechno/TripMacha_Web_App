@@ -150,7 +150,7 @@ const Tripscheduler = () => {
     return (
         <>
             {/* Scheduler Section Starts */}
-            <div className="container-xxl py5" style={{ paddingLeft: "0px", paddingRight: "0px" }}>
+            <div>
                 <div className="container" style={{ marginLeft: "0px", marginRight: "0px", paddingLeft: "0px", paddingRight: "0px", maxWidth: "100%" }}>
                     <div className="scheduler p-5 mt-md-0" style={{ marginTop: "-100px" }}>
                         <div className="row g-5 align-items-center">

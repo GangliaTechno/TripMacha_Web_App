@@ -7,54 +7,58 @@ import Contactus from './components/Contactus'
 import Footer from './components/Footer'
 import Login from './components/Login'
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Backtotop from './components/Backtotop'
-import Applepopup from './components/Applepopup'
 import { AuthProvider } from './context/AuthContext'
 
 function App() {
 
   return (
     <>
-      {/* Home Section starts */}
-      <section id="home">
-        <div className="container-fluid position-relative p-0">
-          <AuthProvider>
-            {/* Navigation bar */}
-            <Navbar />
-
-            {/* Login/SignUp Modal */}
-            <Login/>
-          </AuthProvider>
+      <Router>
+        {/* Home Section starts */}
+        <section id="home">
+          <div className="container-fluid position-relative p-0">
+            <AuthProvider>
+              {/* Navigation bar */}
+              <Navbar />
+              {/* Login/SignUp Modal */}
+              <Login />
+            </AuthProvider>
+          </div>
+        </section>
+        <section>
           {/* Trip Scheduler Plan */}
           <Tripscheduler />
-        </div>
-      </section>
-      {/* Home Section ends */}
+          {/* Home Section ends */}
+        </section>
 
-      {/* Recommendation Section starts */}
-      <section id="recommendation">
-        <Recommendation />
-      </section>
-      {/* Recommendation Section ends */}
 
-      {/* Service Section starts */}
-      <section id="services">
-        <Services />
-      </section>
+        {/* Recommendation Section starts */}
+        <section id="recommendation">
+          <Recommendation />
+        </section>
+        {/* Recommendation Section ends */}
 
-      {/* Contact Us Section starts */}
-      <section id="contact">
-        <Contactus />
-      </section>
-      {/* Contact Us Section ends */}
+        {/* Service Section starts */}
+        <section id="services">
+          <Services />
+        </section>
 
-      {/* Footer Section starts */}
-      <Footer />
-      {/* Footer Section ends */}
+        {/* Contact Us Section starts */}
+        <section id="contact">
+          <Contactus />
+        </section>
+        {/* Contact Us Section ends */}
 
-      {/* Back To Top starts */}
-      <Backtotop />
-      {/* Back To Top ends */}
+        {/* Footer Section starts */}
+        <Footer />
+        {/* Footer Section ends */}
+
+        {/* Back To Top starts */}
+        <Backtotop />
+        {/* Back To Top ends */}
+      </Router>
     </>
   )
 }
