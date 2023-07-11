@@ -93,7 +93,6 @@ const Tripscheduler = () => {
     }, [fromTime, toTime]);
     /* On Page Load / on Change of Time Field Current Time & Duration will be populated in Time TextBox Ends */
 
-
     /* On change of Location Textbox Autocomplete Suggestion of places Starts */
     useEffect(() => {
 

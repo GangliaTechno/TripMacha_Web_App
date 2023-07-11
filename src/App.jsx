@@ -10,13 +10,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Backtotop from './components/Backtotop'
 import { AuthProvider } from './context/AuthContext'
+import IterneryPlan from './components/IterneryPlan'
 
 function App() {
 
   return (
     <>
       <Router>
-        
+
         {/* Navigation bar starts*/}
         <section id="home">
           <div className="container-fluid position-relative p-0">
@@ -96,7 +97,10 @@ function App() {
 
           <Route exact path='/Tripscheduler' element={
             <>
-              <h1>Plan page</h1>
+              {/* Trip Iternery Section starts */}
+              <section id="iternery">
+                <IterneryPlan />
+              </section>
             </>}>
           </Route>
 
