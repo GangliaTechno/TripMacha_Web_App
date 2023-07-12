@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faClockRotateLeft, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import guestImage from '../assets/img/Guest.png'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
 
@@ -15,9 +17,23 @@ const Navbar = () => {
     } = useAuth();
 
     const logOut = (e) => {
+        //For Popup after Clicking Logout button
+        toast('Logged Out Sucessfully!', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
         setAuthUser(null);
         window.sessionStorage.setItem('authUser', null);
-        window.location.reload();
+        setTimeout(() => {
+            window.location.reload();
+        }, 3000);
+        
     }
 
     //Taking the reference of login button and clicking it automatically upon loading
@@ -38,8 +54,9 @@ const Navbar = () => {
 
     return (
         <>
+            <ToastContainer />
             {/* Navigation bar starts */}
-            <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 shadow-sm">
                 <a href="#home" className="navbar-brand p-0">
                     <h1 className="text-primary m-0"><span style={{ color: '#37249D' }}><i className="fa fa-map-marked-alt me-3"></i>Trip</span><span style={{ color: "red" }}>Macha</span></h1>
                 </a>
