@@ -101,6 +101,7 @@ function App() {
               <section id="iternery">
                 <IterneryPlan />
               </section>
+              {/* Trip Iternery Section ends */}
             </>}>
           </Route>
 

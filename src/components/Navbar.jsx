@@ -57,9 +57,9 @@ const Navbar = () => {
             <ToastContainer />
             {/* Navigation bar starts */}
             <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 shadow-sm">
-                <a href="#home" className="navbar-brand p-0">
+                <Link to="/" className="navbar-brand p-0">
                     <h1 className="text-primary m-0"><span style={{ color: '#37249D' }}><i className="fa fa-map-marked-alt me-3"></i>Trip</span><span style={{ color: "red" }}>Macha</span></h1>
-                </a>
+                </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span className="fa fa-bars"></span>
                 </button>
