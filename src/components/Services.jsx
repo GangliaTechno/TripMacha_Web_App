@@ -7,7 +7,7 @@ const Services = () => {
             <div className="container-xxl py-5">
                 <div className="container">
                     <div className="text-center">
-                        <h6 className="section-title bg-white text-center text-primary px-3 fs-3">Services</h6>
+                        <h6 className="section-title bg-white text-center px-3 fs-3" style={{color: "#37249D"}}>Services</h6>
                         <h2 className="mb-5">We Offer Our Best Services To Plan Your Trip</h2>
                     </div>
                     <div className="row g-4">

@@ -75,7 +75,7 @@ const Navbar = () => {
                             (authUser.isAnonymous === true) ?
                                 (
                                     <li className="nav-item dropdown" id="loginGuestDD">
-                                        <a className="nav-link dropdown-toggle fs-5 px-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a className="nav-link dropdown-toggle fs-5 px-0" style={{color: "#37249D"}} href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Guest Login
                                         </a>
                                         <div className="dropdown-menu" style={{ right: "0", minWidth: "0", marginRight: "-26px", width: "150px" }}>
@@ -89,7 +89,7 @@ const Navbar = () => {
                                     </li>
                                 ) : (
                                     <li className="nav-item dropdown" id="loginGuestDD">
-                                        <a className="nav-link dropdown-toggle fs-5 px-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a className="nav-link dropdown-toggle fs-5 px-0" style={{color: "#37249D"}} href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             {authUser.displayName}
                                         </a>
                                         <div className="dropdown-menu" style={{ right: "0", minWidth: "0", marginRight: "-26px", width: "200px" }}>

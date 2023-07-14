@@ -14,7 +14,7 @@ const Recommendation = () => {
             <div className="container-xxl py5 destination">
                 <div className="container">
                     <div className="text-center">
-                        <h6 className="section-title bg-white text-center text-primary px-3 fs-3">Recommendations</h6>
+                        <h6 className="section-title bg-white text-center px-3 fs-3" style={{color: "#37249D"}}>Recommendations</h6>
                         <h1 className="mb-5">Different Places Based On Current Location</h1>
                     </div>
                     <div className="row g-3">
