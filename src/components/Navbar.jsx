@@ -20,7 +20,7 @@ const Navbar = () => {
         //For Popup after Clicking Logout button
         toast('Logged Out Sucessfully!', {
             position: "top-center",
-            autoClose: 2000,
+            autoClose: 1000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -32,7 +32,7 @@ const Navbar = () => {
         window.sessionStorage.setItem('authUser', null);
         setTimeout(() => {
             window.location.reload();
-        }, 3000);
+        }, 1000);
         
     }
 

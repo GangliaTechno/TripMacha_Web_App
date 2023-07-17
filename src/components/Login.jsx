@@ -62,7 +62,7 @@ const Login = () => {
                 //For Popup after Clicking login as guest button
                 toast.success('Logged In as Guest Successfully!', {
                     position: "top-center",
-                    autoClose: 2000,
+                    autoClose: 1000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,

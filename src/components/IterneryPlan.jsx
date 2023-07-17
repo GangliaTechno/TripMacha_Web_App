@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faList, faThumbsUp, faBookmark } from '@fortawesome/free-solid-svg-icons'
+import { faList, faThumbsUp, faBookmark, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark as faBookmarkSlash } from '@fortawesome/free-regular-svg-icons'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Iterneries from './Iterneries';
+import { useAuth } from '../context/AuthContext'
 
 const IterneryPlan = () => {
+
+  const {
+    authUser
+  } = useAuth();
 
   const [isHidden1, setIsHidden1] = useState(false);
   const [isHidden2, setIsHidden2] = useState(false);
@@ -19,33 +25,184 @@ const IterneryPlan = () => {
   const [txtColor2, setTxtColor2] = useState('black');
   const [txtColor3, setTxtColor3] = useState('black');
 
-  //To Like the Iternery Plans
-  const liked = () => {
-    toast('Iternery Plan Liked!', {
-      position: "top-center",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  }
+  const [likeIcon1, setLikeIcon1] = useState(faThumbsUp);
+  const [savedIcon1, setSavedIcon1] = useState(faBookmark);
 
-  //To Save the Iternery plans
-  const saved = () => {
-    toast('Iternery Saved!', {
-      position: "top-center",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  }
+  const liked1 = () => {
+    if (likeIcon1 === faThumbsUp) {
+      setLikeIcon1(faThumbsDown);
+      toast('Iternery Liked!', {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      setLikeIcon1(faThumbsUp);
+      toast('Iternery Disliked!', {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
+  };
+
+  const saved1 = () => {
+    if (savedIcon1 === faBookmark) {
+      setSavedIcon1(faBookmarkSlash);
+      toast('Iternery Saved!', {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      setSavedIcon1(faBookmark);
+      toast('Iternery Unsaved!', {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
+  };
+
+  // Iternery 2
+  const [likeIcon2, setLikeIcon2] = useState(faThumbsUp);
+  const [savedIcon2, setSavedIcon2] = useState(faBookmark);
+
+  const liked2 = () => {
+    if (likeIcon2 === faThumbsUp) {
+      setLikeIcon2(faThumbsDown);
+      toast('Iternery Liked!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      setLikeIcon2(faThumbsUp);
+      toast('Iternery Disliked!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
+  };
+
+  const saved2 = () => {
+    if (savedIcon2 === faBookmark) {
+      setSavedIcon2(faBookmarkSlash);
+      toast('Iternery Saved!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      setSavedIcon2(faBookmark);
+      toast('Iternery Unsaved!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
+  };
+
+  // Iternery 3
+  const [likeIcon3, setLikeIcon3] = useState(faThumbsUp);
+  const [savedIcon3, setSavedIcon3] = useState(faBookmark);
+
+  const liked3 = () => {
+    if (likeIcon3 === faThumbsUp) {
+      setLikeIcon3(faThumbsDown);
+      toast('Iternery Liked!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      setLikeIcon3(faThumbsUp);
+      toast('Iternery Disliked!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
+  };
+
+  const saved3 = () => {
+    if (savedIcon3 === faBookmark) {
+      setSavedIcon3(faBookmarkSlash);
+      toast('Iternery Saved!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      setSavedIcon3(faBookmark);
+      toast('Iternery Unsaved!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
+  };
 
   return (
     <>
@@ -61,7 +218,7 @@ const IterneryPlan = () => {
           <div className="row g-4">
 
             <div className="col-lg-4 col-sm-6">
-              <div className="iternery-item rounded pt-3" style={{backgroundColor: bgColor1, color: txtColor1}}
+              <div className="iternery-item rounded pt-3" style={{ backgroundColor: bgColor1, color: txtColor1 }}
                 onClick={() => {
                   if (bgColor1 == 'white') {
                     setTxtColor1('white');
@@ -86,17 +243,25 @@ const IterneryPlan = () => {
                 <div className="p-4">
                   <p className="text-center fs-5"><FontAwesomeIcon icon={faList} />&nbsp;&nbsp;Iternery Plan:- 1</p>
                   <p className='text-center mt-4'>Places to visit: Temples, Beaches, Restaurant</p>
+                  <hr />
                   <div className='mb-4 mt-3'>
-                    <hr />
-                    <div className='float-right' onClick={liked}><FontAwesomeIcon icon={faThumbsUp} />&nbsp;&nbsp;Like</div>
-                    <div className='float-left' onClick={saved}><FontAwesomeIcon icon={faBookmark} />&nbsp;&nbsp;Save Plan</div>
+                    {
+                      (authUser?.isAnonymous === true) ?
+                        (<div className='float-right' onClick={liked1}><FontAwesomeIcon icon={likeIcon1} />&nbsp;&nbsp;{(likeIcon1 === faThumbsUp) ? <>Like</> : <>Dislike</>}</div>)
+                        : (
+                          <>
+                            <div className='float-right' onClick={liked1}><FontAwesomeIcon icon={likeIcon1} />&nbsp;&nbsp;{(likeIcon1 === faThumbsUp) ? <>Like</> : <>Dislike</>}</div>
+                            <div className='float-left' onClick={saved1}><FontAwesomeIcon icon={savedIcon1} />&nbsp;&nbsp;{(savedIcon1 === faBookmark) ? <>Save Plan</> : <>Unsave Plan</>}</div>
+                          </>
+                        )
+                    }
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="col-lg-4 col-sm-6">
-              <div className="iternery-item rounded pt-3" style={{backgroundColor: bgColor2, color: txtColor2}}
+              <div className="iternery-item rounded pt-3" style={{ backgroundColor: bgColor2, color: txtColor2 }}
                 onClick={() => {
                   if (bgColor2 == 'white') {
                     setTxtColor1('black');
@@ -121,17 +286,25 @@ const IterneryPlan = () => {
                 <div className="p-4">
                   <p className="text-center fs-5"><FontAwesomeIcon icon={faList} />&nbsp;&nbsp;Iternery Plan:- 2</p>
                   <p className='text-center mt-4'>Places to visit: Temples, Beaches, Restaurant</p>
+                  <hr />
                   <div className='mb-4 mt-3'>
-                    <hr />
-                    <div className='float-right'><span onClick={liked}><FontAwesomeIcon icon={faThumbsUp} />&nbsp;&nbsp;Like</span></div>
-                    <div className='float-left' onClick={saved}><FontAwesomeIcon icon={faBookmark} />&nbsp;&nbsp;Save Plan</div>
+                    {
+                      (authUser?.isAnonymous === true) ?
+                        (<div className='float-right' onClick={liked2}><FontAwesomeIcon icon={likeIcon2} />&nbsp;&nbsp;{(likeIcon2 === faThumbsUp) ? <>Like</> : <>Dislike</>}</div>)
+                        : (
+                          <>
+                            <div className='float-right' onClick={liked2}><FontAwesomeIcon icon={likeIcon2} />&nbsp;&nbsp;{(likeIcon2 === faThumbsUp) ? <>Like</> : <>Dislike</>}</div>
+                            <div className='float-left' onClick={saved2}><FontAwesomeIcon icon={savedIcon2} />&nbsp;&nbsp;{(savedIcon2 === faBookmark) ? <>Save Plan</> : <>Unsave Plan</>}</div>
+                          </>
+                        )
+                    }
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="col-lg-4 col-sm-6">
-              <div className="iternery-item rounded pt-3" style={{backgroundColor: bgColor3, color: txtColor3}}
+              <div className="iternery-item rounded pt-3" style={{ backgroundColor: bgColor3, color: txtColor3 }}
                 onClick={() => {
                   if (bgColor3 == 'white') {
                     setTxtColor1('black');
@@ -158,8 +331,16 @@ const IterneryPlan = () => {
                   <p className='text-center mt-4'>Places to visit: Temples, Beaches, Restaurant</p>
                   <hr />
                   <div className='mb-4 mt-3'>
-                    <div className='float-right' onClick={liked}><FontAwesomeIcon icon={faThumbsUp} />&nbsp;&nbsp;Like</div>
-                    <div className='float-left' onClick={saved}><FontAwesomeIcon icon={faBookmark} />&nbsp;&nbsp;Save Plan</div>
+                    {
+                      (authUser?.isAnonymous === true) ?
+                        (<div className='float-right' onClick={liked3}><FontAwesomeIcon icon={likeIcon3} />&nbsp;&nbsp;{(likeIcon3 === faThumbsUp) ? <>Like</> : <>Dislike</>}</div>)
+                        : (
+                          <>
+                            <div className='float-right' onClick={liked3}><FontAwesomeIcon icon={likeIcon3} />&nbsp;&nbsp;{(likeIcon3 === faThumbsUp) ? <>Like</> : <>Dislike</>}</div>
+                            <div className='float-left' onClick={saved3}><FontAwesomeIcon icon={savedIcon3} />&nbsp;&nbsp;{(savedIcon3 === faBookmark) ? <>Save Plan</> : <>Unsave Plan</>}</div>
+                          </>
+                        )
+                    }
                   </div>
                 </div>
               </div>
