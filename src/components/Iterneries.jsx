@@ -9,140 +9,72 @@ const Iterneries = () => {
                 <div class="main-timeline-4 text-white">
                     <div class="timeline-4 left-4">
                         <div class="card">
-                            <div class="card-body p-4 text-white gradient-custom">
-                                <h4>Hoode Beach</h4>
-                                <span className="badge badge-dark mt-3">10:30 AM - 11:30 AM</span>
-                                <p className="mt-3">Spend some time in beach. Eat banana, enjoi life</p>
+                            <div class="card-body p-4 gradient-custom">
+                                <h4>Place: <span>Udupi Sri krishna matha</span></h4>
+                                Timings: <span className="badge badge-dark mt-3 p-2">6:00 AM - 7:00 AM</span>
+                                <p className="mt-3">Activity: <span>Visit the temple and witness the morning rituals</span></p>
+                                <p>Distance: <span>1 km</span></p>
+                                <p>Travel-Time: <span>5 minutes</span></p>
                             </div>
                         </div>
                     </div>
                     <div class="timeline-4 right-4">
                         <div class="card">
-                            <div class="card-body p-4 gradient-custom-4">
-                                <i class="fas fa-camera fa-2x mb-3"></i>
-                                <h4>8:00 AM</h4>
-                                <p class="small text-white-50 mb-4">May 18</p>
-                                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-                                    mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-                                    dignissim
-                                    per, habeo iusto primis ea eam.
-                                </p>
-                                <h6 class="badge bg-light text-black mb-0">New</h6>
-                                <h6 class="badge bg-light text-black mb-0">Admin</h6>
+                            <div class="card-body p-4 gradient-custom">
+                                <h4>Place: <span>Malpe Beach</span></h4>
+                                Timings: <span className="badge badge-dark mt-3 p-2">7:05 AM - 8:00 AM</span>
+                                <p className="mt-3">Activity: <span>Enjoy the early morning beach walk</span></p>
+                                <p>Distance: <span>4 km</span></p>
+                                <p>Travel-Time: <span>15 minutes</span></p>
                             </div>
                         </div>
                     </div>
                     <div class="timeline-4 left-4">
-                        <div class="card gradient-custom">
-                            <div class="card-body p-4">
-                                <i class="fas fa-campground fa-2x mb-3"></i>
-                                <h4>7:25 PM</h4>
-                                <p class="small text-white-50 mb-4">May 6</p>
-                                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-                                    mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-                                    dignissim
-                                    per, habeo iusto primis ea eam.
-                                </p>
-                                <h6 class="badge bg-light text-black mb-0">New</h6>
-                                <h6 class="badge bg-light text-black mb-0">Admin</h6>
+                        <div class="card">
+                            <div class="card-body p-4 gradient-custom">
+                                <h4>Place: <span>Woodlands Restaurant</span></h4>
+                                Timings: <span className="badge badge-dark mt-3 p-2">8:20 AM - 9:15 AM</span>
+                                <p className="mt-3">Activity: <span>Have a Good breakfast</span></p>
+                                <p>Distance: <span>2 km</span></p>
+                                <p>Travel-Time: <span>10 minutes</span></p>
                             </div>
                         </div>
                     </div>
                     <div class="timeline-4 right-4">
                         <div class="card gradient-custom-4">
-                            <div class="card-body p-4">
-                                <i class="fas fa-sun fa-2x mb-3"></i>
-                                <h4>3:55 PM</h4>
-                                <p class="small text-white-50 mb-4">Apr 26</p>
-                                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-                                    mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-                                    dignissim
-                                    per, habeo iusto primis ea eam.
-                                </p>
-                                <h6 class="badge bg-light text-black mb-0">New</h6>
-                                <h6 class="badge bg-light text-black mb-0">Admin</h6>
+                            <div class="card-body p-4 gradient-custom">
+                                <h4>Place: <span>Kaup lighthouse</span></h4>
+                                Timings: <span className="badge badge-dark mt-3 p-2">9:45 AM - 10:45 AM</span>
+                                <p className="mt-3">Activity: <span>Climb up the lighthouse for a scenic view</span></p>
+                                <p>Distance: <span>10 km</span></p>
+                                <p>Travel-Time: <span>30 minutes</span></p>
                             </div>
                         </div>
                     </div>
                     <div class="timeline-4 left-4">
-                        <div class="card gradient-custom">
-                            <div class="card-body p-4">
-                                <i class="fas fa-palette fa-2x mb-3"></i>
-                                <h4>5:24 PM</h4>
-                                <p class="small text-white-50 mb-4">Apr 12</p>
-                                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-                                    mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-                                    dignissim
-                                    per, habeo iusto primis ea eam.
-                                </p>
-                                <h6 class="badge bg-light text-black mb-0">New</h6>
-                                <h6 class="badge bg-light text-black mb-0">Admin</h6>
+                        <div class="card">
+                            <div class="card-body p-4 gradient-custom">
+                                <h4>Place: <span>Manipal End point</span></h4>
+                                Timings: <span className="badge badge-dark mt-3 p-2">11:05 AM - 12:05 PM</span>
+                                <p className="mt-3">Activity: <span>Take a stroll and enjoy the beautiful view</span></p>
+                                <p>Distance: <span>8 km</span></p>
+                                <p>Travel-Time: <span>20 minutes</span></p>
                             </div>
                         </div>
                     </div>
                     <div class="timeline-4 right-4">
-                        <div class="card gradient-custom-4">
-                            <div class="card-body p-4">
-                                <i class="fas fa-laugh-beam fa-2x mb-3"></i>
-                                <h4>11:25 AM</h4>
-                                <p class="small text-white-50 mb-4">Apr 11</p>
-                                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-                                    mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-                                    dignissim
-                                    per, habeo iusto primis ea eam.
-                                </p>
-                                <h6 class="badge bg-light text-black mb-0">New</h6>
-                                <h6 class="badge bg-light text-black mb-0">Admin</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-4 left-4">
-                        <div class="card gradient-custom">
-                            <div class="card-body p-4">
-                                <i class="fas fa-pizza-slice fa-2x mb-3"></i>
-                                <h4>12:30 PM</h4>
-                                <p class="small text-white-50 mb-4">Apr 5</p>
-                                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-                                    mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-                                    dignissim
-                                    per, habeo iusto primis ea eam.
-                                </p>
-                                <h6 class="badge bg-light text-black mb-0">New</h6>
-                                <h6 class="badge bg-light text-black mb-0">Admin</h6>
+                        <div class="card">
+                            <div class="card-body p-4 gradient-custom">
+                                <h4>Place: <span>Diana Restaurant</span></h4>
+                                Timings: <span className="badge badge-dark mt-3 p-2">12:20 PM - 1:20 PM</span>
+                                <p className="mt-3">Activity: <span>Have a Good and Healthy Lunch</span></p>
+                                <p>Distance: <span>2 km</span></p>
+                                <p>Travel-Time: <span>10 minutes</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-            {/* <div className='container justify-content-around mt-5'>
-
-                <div className='p-4 mt-4 rounded' style={{ backgroundColor: "#dddee7" }}>
-                    <h4 className='text-dark'>Hoode Beach</h4>
-                    <span className="badge badge-dark mt-3">10:30 AM - 11:30 AM</span>
-                    <p className="mt-2">Spend some time in beach. Eat banana, enjoi life</p>
-                </div>
-
-                <div className='p-4 mt-4 rounded' style={{ backgroundColor: "#dddee7" }}>
-                    <h4 className='text-dark'>Malpe Fish Market</h4>
-                    <span className="badge badge-dark mt-3">11:30 AM - 12:30 PM</span>
-                    <p className="mt-2">Buy some fish . Fry fish, Eat fish, enjoi life</p>
-                </div>
-
-                <div className='p-4 mt-4 rounded' style={{ backgroundColor: "#dddee7" }}>
-                    <h4 className='text-dark'>Hoode Beach</h4>
-                    <span className="badge badge-dark mt-3">12:30 PM - 01:30 PM</span>
-                    <p className="mt-2">Spend some time in beach. Eat banana, enjoi life</p>
-                </div>
-
-                <div className='p-4 mt-4 rounded' style={{ backgroundColor: "#dddee7" }}>
-                    <h4 className='text-dark'>Malpe Fish Market</h4>
-                    <span className="badge badge-dark mt-3">01:30 PM - 02:30 PM</span>
-                    <p className="mt-2">Buy some fish . Fry fish, Eat fish, enjoi life</p>
-                </div>
-            </div> */}
         </>
     )
 }

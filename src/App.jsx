@@ -1,4 +1,3 @@
-import './App.css'
 import Navbar from './components/Navbar'
 import Tripscheduler from './components/Tripscheduler'
 import Recommendation from './components/Recommendation'
@@ -7,7 +6,7 @@ import Contactus from './components/Contactus'
 import Footer from './components/Footer'
 import Login from './components/Login'
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Backtotop from './components/Backtotop'
 import { AuthProvider } from './context/AuthContext'
 import IterneryPlan from './components/IterneryPlan'
