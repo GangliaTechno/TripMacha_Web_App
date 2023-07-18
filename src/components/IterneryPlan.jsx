@@ -242,7 +242,7 @@ const IterneryPlan = () => {
                 }}>
                 <div className="p-4">
                   <p className="text-center fs-5"><FontAwesomeIcon icon={faList} />&nbsp;&nbsp;Iternery Plan:- 1</p>
-                  <p className='text-center mt-4'>Places to visit: Temples, Beaches, Restaurant</p>
+                  <p className='text-center mt-4'>Places to visit: <span>Temples, Beaches, Restaurant</span></p>
                   <hr />
                   <div className='mb-4 mt-3'>
                     {
@@ -285,7 +285,7 @@ const IterneryPlan = () => {
                 }}>
                 <div className="p-4">
                   <p className="text-center fs-5"><FontAwesomeIcon icon={faList} />&nbsp;&nbsp;Iternery Plan:- 2</p>
-                  <p className='text-center mt-4'>Places to visit: Temples, Beaches, Restaurant</p>
+                  <p className='text-center mt-4'>Places to visit: <span>Temples, Beaches, Restaurant</span></p>
                   <hr />
                   <div className='mb-4 mt-3'>
                     {
@@ -328,7 +328,7 @@ const IterneryPlan = () => {
                 }}>
                 <div className="p-4">
                   <p className="text-center fs-5"><FontAwesomeIcon icon={faList} />&nbsp;&nbsp;Iternery Plan:- 3</p>
-                  <p className='text-center mt-4'>Places to visit: Temples, Beaches, Restaurant</p>
+                  <p className='text-center mt-4'>Places to visit: <span>Temples, Beaches, Restaurant</span></p>
                   <hr />
                   <div className='mb-4 mt-3'>
                     {

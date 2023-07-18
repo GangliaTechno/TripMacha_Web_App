@@ -15,6 +15,7 @@ const Iterneries = () => {
                                 <p className="mt-3">Activity: <span>Visit the temple and witness the morning rituals</span></p>
                                 <p>Distance: <span>1 km</span></p>
                                 <p>Travel-Time: <span>5 minutes</span></p>
+                                <a className="btn" style={{ backgroundColor: "#727272", color: "white" }} href="#" role="button">Open in Maps</a>
                             </div>
                         </div>
                     </div>
@@ -26,6 +27,7 @@ const Iterneries = () => {
                                 <p className="mt-3">Activity: <span>Enjoy the early morning beach walk</span></p>
                                 <p>Distance: <span>4 km</span></p>
                                 <p>Travel-Time: <span>15 minutes</span></p>
+                                <a className="btn" style={{ backgroundColor: "#727272", color: "white" }} href="#" role="button">Open in Maps</a>
                             </div>
                         </div>
                     </div>
@@ -37,6 +39,7 @@ const Iterneries = () => {
                                 <p className="mt-3">Activity: <span>Have a Good breakfast</span></p>
                                 <p>Distance: <span>2 km</span></p>
                                 <p>Travel-Time: <span>10 minutes</span></p>
+                                <a className="btn" style={{ backgroundColor: "#727272", color: "white" }} href="#" role="button">Open in Maps</a>
                             </div>
                         </div>
                     </div>
@@ -48,6 +51,7 @@ const Iterneries = () => {
                                 <p className="mt-3">Activity: <span>Climb up the lighthouse for a scenic view</span></p>
                                 <p>Distance: <span>10 km</span></p>
                                 <p>Travel-Time: <span>30 minutes</span></p>
+                                <a className="btn" style={{ backgroundColor: "#727272", color: "white" }} href="#" role="button">Open in Maps</a>
                             </div>
                         </div>
                     </div>
@@ -59,6 +63,7 @@ const Iterneries = () => {
                                 <p className="mt-3">Activity: <span>Take a stroll and enjoy the beautiful view</span></p>
                                 <p>Distance: <span>8 km</span></p>
                                 <p>Travel-Time: <span>20 minutes</span></p>
+                                <a className="btn" style={{ backgroundColor: "#727272", color: "white" }} href="#" role="button">Open in Maps</a>
                             </div>
                         </div>
                     </div>
@@ -70,6 +75,7 @@ const Iterneries = () => {
                                 <p className="mt-3">Activity: <span>Have a Good and Healthy Lunch</span></p>
                                 <p>Distance: <span>2 km</span></p>
                                 <p>Travel-Time: <span>10 minutes</span></p>
+                                <a className="btn" style={{ backgroundColor: "#727272", color: "white" }} href="#" role="button">Open in Maps</a>
                             </div>
                         </div>
                     </div>

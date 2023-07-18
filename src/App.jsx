@@ -10,6 +10,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Backtotop from './components/Backtotop'
 import { AuthProvider } from './context/AuthContext'
 import IterneryPlan from './components/IterneryPlan'
+import Liked from './components/Liked'
+import Saved from './components/Saved'
 
 function App() {
 
@@ -102,6 +104,26 @@ function App() {
               </>}>
             </Route>
 
+            <Route exact path='/Liked' element={
+              <>
+                {/* Liked Section starts */}
+                <section id="Liked">
+                  <Liked />
+                </section>
+                {/* Liked Section ends */}
+              </>}>
+            </Route>
+
+            <Route exact path='/Saved' element={
+              <>
+                {/* Saved Section starts */}
+                <section id="Saved">
+                  <Saved />
+                </section>
+                {/* Saved Section ends */}
+              </>}>
+            </Route>
+            
           </Routes>
 
           {/* Footer Section starts */}

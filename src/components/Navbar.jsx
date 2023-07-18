@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faThumbsUp, faClockRotateLeft, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { faThumbsUp, faArrowRightFromBracket, faBookmark } from '@fortawesome/free-solid-svg-icons'
 import guestImage from '../assets/img/Guest.png'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,8 +10,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const Navbar = () => {
 
     const {
-        isLoggedIn,
-        setIsLoggedIn,
         authUser,
         setAuthUser
     } = useAuth();
@@ -99,8 +97,8 @@ const Navbar = () => {
                                             </div>
                                             <hr />
                                             <div className="text-center">
-                                                <a href="#" className="text-decoration-none text-capitalize linkhover"><FontAwesomeIcon style={{ marginRight: "10px" }} icon={faThumbsUp} />Liked Iternery</a><br /><br />
-                                                <a href="#" className="text-decoration-none text-capitalize linkhover"><FontAwesomeIcon style={{ marginRight: "10px" }} icon={faClockRotateLeft} />Saved History</a>
+                                                <Link to="/Liked" className="text-decoration-none text-capitalize linkhover"><FontAwesomeIcon style={{ marginRight: "10px" }} icon={faThumbsUp} />Liked Iterneries</Link><br /><br />
+                                                <Link to="/Saved" className="text-decoration-none text-capitalize linkhover"><FontAwesomeIcon style={{ marginRight: "10px" }} icon={faBookmark} />Saved Trip Plans</Link>
                                             </div>
                                             <hr />
                                             <a onClick={(e) => { logOut(e) }} className="dropdown-item bg-transparent text-center linkhover" href="#" id="btnlogout"><FontAwesomeIcon style={{ marginRight: "10px" }} icon={faArrowRightFromBracket} />Logout</a>
