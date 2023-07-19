@@ -12,11 +12,28 @@ export function AuthProvider(props) {
     const x = window.sessionStorage.getItem('isLoggedIn') === 'true' ? true : false;
     const [isLoggedIn, setIsLoggedIn] = useState(x);
 
+
+    const [userPlaceName, setUserPlaceName] = useState('')
+    const [userWithinRadius, setUserWithinRadius] = useState('')
+    const [userFromTime, setUserFromTime,] = useState('')
+    const [userToTime, setUserToTime] = useState('');
+
+
+
     const value = {
         authUser,
         setAuthUser,
         isLoggedIn,
-        setIsLoggedIn
+        setIsLoggedIn,
+
+        userPlaceName,
+        userWithinRadius,
+        userFromTime,
+        userToTime,
+        setUserPlaceName,
+        setUserWithinRadius,
+        setUserFromTime,
+        setUserToTime
     }
 
     return (

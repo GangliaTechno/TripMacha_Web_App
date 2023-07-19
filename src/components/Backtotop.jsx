@@ -23,7 +23,7 @@ const Backtotop = () => {
     return (
         <>
             {/* Back to Top */}
-            <a href="#" class="btn btn-lg btn-outline-primary btn-lg-square shadow-none back-to-top" style={{display: pageOffsetY >= 100 ? 'block': 'none'}} onClick={scrollToTop}><i class="bi bi-arrow-up"></i></a>
+            <a href="#" className="btn btn-lg btn-outline-primary btn-lg-square shadow-none back-to-top" style={{display: pageOffsetY >= 100 ? 'block': 'none'}} onClick={scrollToTop}><i className="bi bi-arrow-up"></i></a>
         </>
     )
 }

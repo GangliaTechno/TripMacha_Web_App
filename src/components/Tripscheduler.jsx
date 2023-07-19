@@ -2,18 +2,27 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
+import { useAuth } from '../context/AuthContext';
 
 const Tripscheduler = () => {
+
+    const {
+        setUserPlaceName,
+        setUserWithinRadius,
+        setUserFromTime,
+        setUserToTime
+    } = useAuth()
+
 
     const [latitude, setLatitude] = useState(null);
     const [longitude, setLongitude] = useState(null);
     const [placeName, setPlaceName] = useState('');
-    const [radius, setRadius] = useState();
+    const [radius, setRadius] = useState('');
 
     const [currentDate, setCurrentDate] = useState('');
     const [fromTime, setFromTime] = useState('');
     const [toTime, setToTime] = useState('');
-    const [duration, setDuration] = useState();
+    const [duration, setDuration] = useState('');
 
     const [error, setError] = useState(null);
 
@@ -60,9 +69,11 @@ const Tripscheduler = () => {
     const handleTimeChange = (e) => {
         if (e.target.id === 'ftime') {
             setFromTime(e.target.value);
+            setUserFromTime(e.target.value);
         }
         else if (e.target.id === 'ttime') {
             setToTime(e.target.value);
+            setUserToTime(e.target.value);
         }
     };
 
@@ -101,6 +112,25 @@ const Tripscheduler = () => {
             options
         );
 
+        // Textbox data was getting reset when other components were clicked, so wrote this code
+        window.google.maps.event.addListener(autoCompleteRef.current, 'place_changed', () => {
+            var cityName = ''
+            var stateName = ''
+            var address_components = autoCompleteRef.current.getPlace().address_components
+            for (let i = 0; i < address_components.length; i++) {
+                if (address_components[i].types.includes("locality")) {
+                    cityName = address_components[i].long_name;
+                }
+                else if (address_components[i].types.includes("administrative_area_level_1")) {
+                    stateName = address_components[i].long_name;
+                }
+            }
+            var locate = cityName + ", " + stateName;
+
+            setPlaceName(locate);
+            setUserPlaceName(locate);
+        })
+
         if (latitude && longitude) {
             const apiKey = 'AIzaSyDMWSgHTmFD9UdPTYIvLkXww_eyRdI5ggA';
             const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
@@ -121,11 +151,9 @@ const Tripscheduler = () => {
                             else if (addressComponents[i].types.includes("administrative_area_level_1")) {
                                 stateName = addressComponents[i].long_name;
                             }
-                            else if (types.includes("postal_code")) {
-                                pincode = addressComponents[i].long_name;
-                            }
                         }
-                        var locate = cityName + ", " + stateName + " - " + pincode;
+                        var locate = cityName + ", " + stateName;
+
                         setPlaceName(locate);
                     }
                     else {
@@ -147,6 +175,7 @@ const Tripscheduler = () => {
     };
     /* On change of Location Textbox Autocomplete Suggestion of places Ends */
 
+
     return (
         <>
             {/* Scheduler Section Starts */}
@@ -163,38 +192,93 @@ const Tripscheduler = () => {
                                     <div className="row g-3">
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="text" className="form-control bg-transparent shadow-none text-white" id="location" placeholder="Location" ref={inputRef} value={placeName} onChange={(e) => setPlaceName(e.target.value)}></input>
-                                                <label for="location" className="text-white fradius">Location</label>
+                                                <input
+                                                    type="text"
+                                                    className="form-control bg-transparent shadow-none text-white"
+                                                    id="location"
+                                                    placeholder="Location"
+                                                    ref={inputRef}
+                                                    value={placeName}
+                                                    onChange={(e) => {
+                                                        setPlaceName(e.target.value)
+                                                        setUserPlaceName(e.target.value)
+                                                    }}
+                                                ></input>
+                                                <label htmlFor="location" className="text-white fradius">Location</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="number" className="form-control bg-transparent shadow-none text-white" id="radius" value={radius} onChange={(e) => setRadius(e.target.value)} placeholder="Within distance" max="60" min="10"></input>
-                                                <label for="radius" className="text-white fradius">Within the Radius of (Km)</label>
+                                                <input
+                                                    type="number"
+                                                    className="form-control bg-transparent shadow-none text-white"
+                                                    id="radius"
+                                                    value={radius}
+                                                    onChange={(e) => {
+                                                        setRadius(e.target.value)
+                                                        setUserWithinRadius(e.target.value)
+                                                    }
+                                                    }
+                                                    placeholder="Within distance"
+                                                    max="60"
+                                                    min="10"
+                                                ></input>
+                                                <label htmlFor="radius" className="text-white fradius">Within the Radius of (Km)</label>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <div className="form-floating">
-                                                <input type="date" className="form-control bg-transparent shadow-none text-white" id="fdate" placeholder="Current Date" value={currentDate} onChange={(e) => setCurrentDate(e.target.value)}></input>
-                                                <label for="fdate" className="text-white fradius">Current Date</label>
+                                                <input
+                                                    type="date"
+                                                    className="form-control bg-transparent shadow-none text-white"
+                                                    id="fdate"
+                                                    placeholder="Current Date"
+                                                    value={currentDate}
+                                                    onChange={(e) =>{
+                                                        setCurrentDate(e.target.value)
+                                                    } }
+                                                ></input>
+                                                <label htmlFor="fdate" className="text-white fradius">Current Date</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="time" className="form-control bg-transparent shadow-none text-white" id="ftime" placeholder="From Timings" value={fromTime} onChange={handleTimeChange}></input>
-                                                <label for="ftime" className="text-white fradius">From Timings</label>
+                                                <input
+                                                    type="time"
+                                                    className="form-control bg-transparent shadow-none text-white"
+                                                    id="ftime"
+                                                    placeholder="From Timings"
+                                                    value={fromTime}
+                                                    onChange={handleTimeChange}                                                     
+                                                ></input>
+                                                <label htmlFor="ftime" className="text-white fradius">From Timings</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="time" className="form-control bg-transparent shadow-none text-white" id="ttime" placeholder="To Timings" value={toTime} onChange={handleTimeChange}></input>
-                                                <label for="ttime" className="text-white fradius">To Timings</label>
+                                                <input
+                                                    type="time"
+                                                    className="form-control bg-transparent shadow-none text-white"
+                                                    id="ttime"
+                                                    placeholder="To Timings"
+                                                    value={toTime}
+                                                    onChange={handleTimeChange}
+                                                ></input>
+                                                <label htmlFor="ttime" className="text-white fradius">To Timings</label>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <div className="form-floating">
-                                                <input type="text" className=" form-control bg-transparent shadow-none text-white" id="duration" placeholder="Duration(in minutes)" value={duration} disabled></input>
-                                                <label for="duration" className="text-white">Duration</label>
+                                                <input
+                                                    type="text"
+                                                    className=" form-control bg-transparent shadow-none text-white"
+                                                    id="duration"
+                                                    placeholder="Duration(in minutes)"
+                                                    value={duration}
+                                                    disabled
+                                                >
+                                                </input>
+                                                <label htmlFor="duration" className="text-white">Duration</label>
                                             </div>
                                         </div>
                                         <div className="col-12">

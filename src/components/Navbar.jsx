@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faArrowRightFromBracket, faBookmark } from '@fortawesome/free-solid-svg-icons'
-import guestImage from '../assets/img/Guest.png'
+import guestImage from '../assets/img/guest.png'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

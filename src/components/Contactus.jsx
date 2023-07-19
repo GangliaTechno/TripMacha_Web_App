@@ -45,25 +45,25 @@ const Contactus = () => {
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <input type="text" className="form-control bg-transparent shadow-none text-white" id="name" name="formName" placeholder="Your name" required/>
-                                                <label for="name" className="text-white">Your Name</label>
+                                                <label htmlFor="name" className="text-white">Your Name</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <input type="email" className="form-control bg-transparent shadow-none text-white" id="mailID" name="mailId" placeholder="Your Contact Number" required/>
-                                                <label for="phone" className="text-white">Your Email-ID</label>
+                                                <label htmlFor="phone" className="text-white">Your Email-ID</label>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <div className="form-floating">
                                                 <input type="text" className="form-control bg-transparent shadow-none text-white" id="subject" name="subject" placeholder="Your Email-ID" required/>
-                                                <label for="email" className="text-white">Subject</label>
+                                                <label htmlFor="email" className="text-white">Subject</label>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <div className="form-floating">
                                                 <textarea className="form-control bg-transparent shadow-none text-white" placeholder="Special Request" name="message" id="message" style={{ height: "100px" }} required></textarea>
-                                                <label for="message" className="text-white">Write message here...</label>
+                                                <label htmlFor="message" className="text-white">Write message here...</label>
                                             </div>
                                         </div>
                                         <div className="col-12">
