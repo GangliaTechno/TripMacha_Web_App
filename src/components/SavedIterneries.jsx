@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LikedIterneries = () => {
+const SavedIterneries = () => {
     return (
         <>
             <h6 className="bg-white text-center px-3 fs-3 mt-5" style={{ color: "#37249D" }}>Iternery Plan</h6>
@@ -59,4 +59,4 @@ const LikedIterneries = () => {
     )
 }
 
-export default LikedIterneries
+export default SavedIterneries

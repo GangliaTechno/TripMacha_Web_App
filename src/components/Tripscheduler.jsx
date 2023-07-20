@@ -151,8 +151,11 @@ const Tripscheduler = () => {
                             else if (addressComponents[i].types.includes("administrative_area_level_1")) {
                                 stateName = addressComponents[i].long_name;
                             }
+                            else if(addressComponents[i].types.includes("postal_code")){
+                                pincode=addressComponents[i].long_name;
+                            }
                         }
-                        var locate = cityName + ", " + stateName;
+                        var locate = cityName + ", " + stateName+" - "+pincode;
 
                         setPlaceName(locate);
                     }
@@ -234,9 +237,9 @@ const Tripscheduler = () => {
                                                     id="fdate"
                                                     placeholder="Current Date"
                                                     value={currentDate}
-                                                    onChange={(e) =>{
+                                                    onChange={(e) => {
                                                         setCurrentDate(e.target.value)
-                                                    } }
+                                                    }}
                                                 ></input>
                                                 <label htmlFor="fdate" className="text-white fradius">Current Date</label>
                                             </div>
@@ -249,7 +252,7 @@ const Tripscheduler = () => {
                                                     id="ftime"
                                                     placeholder="From Timings"
                                                     value={fromTime}
-                                                    onChange={handleTimeChange}                                                     
+                                                    onChange={handleTimeChange}
                                                 ></input>
                                                 <label htmlFor="ftime" className="text-white fradius">From Timings</label>
                                             </div>

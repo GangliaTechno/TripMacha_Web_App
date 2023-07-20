@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import LikedIterneries from './LikedIterneries'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faListCheck, faClockRotateLeft, faClock } from '@fortawesome/free-solid-svg-icons'
 
@@ -13,7 +11,6 @@ const Liked = () => {
     const [txtColor1, setTxtColor1] = useState('black');
     return (
         <>
-            <ToastContainer />
             {/* Liked Iternery Section Starts */}
             <div className="container-xxl py-5">
                 <div className="container">
