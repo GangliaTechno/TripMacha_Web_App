@@ -25,13 +25,13 @@ const IterneryPlan = () => {
   } = useAuth();
 
 
-  useEffect(()=>{
-    console.log("User placename : ",userPlaceName);
-    console.log("User Radius    : ",userWithinRadius);
-    console.log("User FromTime  : ",userFromTime);
-    console.log("User ToTime    : ",userToTime);
+  useEffect(() => {
+    console.log("User placename : ", userPlaceName);
+    console.log("User Radius    : ", userWithinRadius);
+    console.log("User FromTime  : ", userFromTime);
+    console.log("User ToTime    : ", userToTime);
 
-  },[])
+  }, [])
 
   const [isHidden1, setIsHidden1] = useState(false);
   const [isHidden2, setIsHidden2] = useState(false);

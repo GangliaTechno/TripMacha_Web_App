@@ -12,8 +12,8 @@ const Liked = () => {
             <div className="container-xxl py-5">
                 <div className="container">
                     <div className="text-center">
-                        <h6 className="section-title text-center px-3 fs-3" style={{ color: "#37249D" }}>Your Liked Trip Plan</h6>
-                        <h2 className="mb-5">Here are the Iternaries which you liked</h2>
+                        <h6 className="section-title text-center px-3 fs-3" style={{ color: "#37249D" }}>Your Saved Trip Plan</h6>
+                        <h2 className="mb-5">Here are the Iternaries which you Saved</h2>
                     </div>
                     <div className="row g-4">
 
