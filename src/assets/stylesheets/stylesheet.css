@@ -609,7 +609,7 @@ nav {
 
 .gradient-custom {
     box-shadow: rgba(0, 0, 0, 0.2) -4px 9px 25px -6px;
-    background-image: linear-gradient(rgb(43, 4, 105), rgb(179, 179, 179));
+    background-image: linear-gradient(#4e26e2,rgb(43, 4, 105));
 }
 
 /* Iternery Section Ends */
