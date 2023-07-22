@@ -1,4 +1,4 @@
-# Trip Website
+# TripMacha Website
 
 Welcome to the TripMacha website project! This is a website designed to help users plan and organize their trips, find interesting destinations, and share their travel experiences. The project aims to provide a user-friendly interface and an intuitive user experience for all travelers.
 
