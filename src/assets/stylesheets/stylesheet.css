@@ -508,16 +508,18 @@ nav {
     position: relative;
 }
 
-.main-timeline-4::after {
-    content: "";
-    position: absolute;
-    width: 3px;
-    background-color: #bbb;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-}
+
+
+.main-timeline-4 ::after{
+        content: "";
+        position: absolute;
+        width: 3px;
+        background-color: #bbb;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+    }
 
 .timeline-4 {
     position: relative;

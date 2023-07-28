@@ -7,11 +7,44 @@ import { useAuth } from '../context/AuthContext';
 const Tripscheduler = () => {
 
     const {
-        setUserPlaceName,
-        setUserWithinRadius,
         setUserFromTime,
-        setUserToTime
+        setUserPlaceName,
+        setUserToTime,
+        setUserWithinRadius,
+
+        setResponse1,
+        setResponse2,
+        setResponse3
     } = useAuth()
+
+
+    const handleSubmit = async () => {
+        try {
+            const url = 'http://127.0.0.1:8000/mltravel';
+            const headers = {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            };
+            const data = {
+                place: placeName,
+                start_time: fromTime,
+                end_time: toTime,
+                distance: radius
+            };
+            console.log(JSON.stringify(data));
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: headers,
+                body: JSON.stringify(data)
+            });
+
+            const responseData = await response.json();
+            return responseData
+
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
 
 
     const [latitude, setLatitude] = useState(null);
@@ -151,11 +184,11 @@ const Tripscheduler = () => {
                             else if (addressComponents[i].types.includes("administrative_area_level_1")) {
                                 stateName = addressComponents[i].long_name;
                             }
-                            else if(addressComponents[i].types.includes("postal_code")){
-                                pincode=addressComponents[i].long_name;
+                            else if (addressComponents[i].types.includes("postal_code")) {
+                                pincode = addressComponents[i].long_name;
                             }
                         }
-                        var locate = cityName + ", " + stateName+" - "+pincode;
+                        var locate = cityName + ", " + stateName + " - " + pincode;
 
                         setPlaceName(locate);
                     }
@@ -286,7 +319,18 @@ const Tripscheduler = () => {
                                         </div>
                                         <div className="col-12">
                                             <Link to='/Tripscheduler'>
-                                                <button className="btn btn-outline-light w-100 py-3 shadow-none" type="submit" id="btnlocate">Locate Now</button>
+                                                <button
+                                                    className="btn btn-outline-light w-100 py-3 shadow-none"
+                                                    type="submit"
+                                                    id="btnlocate"
+                                                    onClick={async () => {
+                                                        let r1 = await handleSubmit().then((data)=>{return JSON.stringify(data)})
+                                                        setResponse1(JSON.parse(JSON.parse(r1)))
+                                                        // setResponse2(handleSubmit().then((data)=>{return data}))
+                                                        // setResponse3(handleSubmit().then((data)=>{return data}))
+                                                    }
+                                                    }
+                                                >Locate Now</button>
                                             </Link>
                                         </div>
                                     </div>

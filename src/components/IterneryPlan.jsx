@@ -8,9 +8,6 @@ import Iterneries from './Iterneries';
 import { useAuth } from '../context/AuthContext'
 
 const IterneryPlan = () => {
-
-
-
   const {
     authUser,
 
@@ -21,17 +18,19 @@ const IterneryPlan = () => {
     setUserPlaceName,
     setUserWithinRadius,
     setUserFromTime,
-    setUserToTime
+    setUserToTime,
+
+    response1,
+    response2,
+    response3,
   } = useAuth();
 
-
   useEffect(() => {
-    console.log("User placename : ", userPlaceName);
-    console.log("User Radius    : ", userWithinRadius);
-    console.log("User FromTime  : ", userFromTime);
-    console.log("User ToTime    : ", userToTime);
+    if (response1)
+      console.log(response1);
+  })
 
-  }, [])
+
 
   const [isHidden1, setIsHidden1] = useState(false);
   const [isHidden2, setIsHidden2] = useState(false);
@@ -224,6 +223,7 @@ const IterneryPlan = () => {
     }
   };
 
+
   return (
     <>
       <ToastContainer />
@@ -235,8 +235,10 @@ const IterneryPlan = () => {
             <h6 className="section-title text-center px-3 fs-3" style={{ color: "#37249D" }}>Your Trip Iternaries</h6>
             <h2 className="mb-5">Here are the Iternaries for a quick trip plan</h2>
           </div>
+
           <div className="row g-4">
 
+            {/* Itenary plan 1 */}
             <div className="col-lg-4 col-sm-6">
               <div className="iternery-item rounded pt-3" style={{ backgroundColor: bgColor1, color: txtColor1 }}
                 onClick={() => {
@@ -370,7 +372,7 @@ const IterneryPlan = () => {
       </div>
       {/* Iternary Section Ends */}
 
-      {isHidden1 && <Iterneries />}
+      {isHidden1 && <Iterneries/>}
       {isHidden2 && <Iterneries />}
       {isHidden3 && <Iterneries />}
     </>

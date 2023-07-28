@@ -18,6 +18,9 @@ export function AuthProvider(props) {
     const [userFromTime, setUserFromTime,] = useState('')
     const [userToTime, setUserToTime] = useState('');
 
+    const [response1, setResponse1] = useState(null);
+    const [response2, setResponse2] = useState(null);
+    const [response3, setResponse3] = useState(null);
 
 
     const value = {
@@ -33,7 +36,14 @@ export function AuthProvider(props) {
         setUserPlaceName,
         setUserWithinRadius,
         setUserFromTime,
-        setUserToTime
+        setUserToTime,
+
+        response1,
+        response2,
+        response3,
+        setResponse1,
+        setResponse2,
+        setResponse3,
     }
 
     return (
