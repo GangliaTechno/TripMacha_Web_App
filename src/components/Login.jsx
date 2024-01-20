@@ -131,7 +131,7 @@ const Login = () => {
                                     </a>
                                 </div>
                                 <div className="col-md-12 mt-3">
-                                    <a onClick={applenotify} className="btn-lg btn-mail rounded-pill btn-block fs-6 my-3" href="#"><i class="fa-regular fa-envelope fa-lg"></i> Sign in using Email and Password
+                                    <a onClick={mailnotify} className="btn-lg btn-mail rounded-pill btn-block fs-6 my-3" href="#"><i class="fa-regular fa-envelope fa-lg"></i> Sign in using Email and Password
                                     </a>
                                 </div>
                             </div>
