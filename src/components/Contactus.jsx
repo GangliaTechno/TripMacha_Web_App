@@ -44,25 +44,25 @@ const Contactus = () => {
                                     <div className="row g-3">
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="text" className="form-control bg-transparent shadow-none text-white" id="name" name="formName" placeholder="Your name" required/>
+                                                <input type="text" className="form-control bg-transparent shadow-none text-white" id="name" name="formName" placeholder="Your name" required autoComplete='on'/>
                                                 <label htmlFor="name" className="text-white">Your Name</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="email" className="form-control bg-transparent shadow-none text-white" id="mailID" name="mailId" placeholder="Your Contact Number" required/>
-                                                <label htmlFor="phone" className="text-white">Your Email-ID</label>
+                                                <input type="email" className="form-control bg-transparent shadow-none text-white" id="mailID" name="mailId" placeholder="Your Contact Number" required autoComplete='on'/>
+                                                <label htmlFor="mailID" className="text-white">Your Email-ID</label>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <div className="form-floating">
-                                                <input type="text" className="form-control bg-transparent shadow-none text-white" id="subject" name="subject" placeholder="Your Email-ID" required/>
-                                                <label htmlFor="email" className="text-white">Subject</label>
+                                                <input type="text" className="form-control bg-transparent shadow-none text-white" id="subject" name="subject" placeholder="Your Email-ID" required autoComplete='on'/>
+                                                <label htmlFor="subject" className="text-white">Subject</label>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <div className="form-floating">
-                                                <textarea className="form-control bg-transparent shadow-none text-white" placeholder="Special Request" name="message" id="message" style={{ height: "100px" }} required></textarea>
+                                                <textarea className="form-control bg-transparent shadow-none text-white" placeholder="Special Request" name="message" id="message" style={{ height: "100px" }} required autoComplete='on'></textarea>
                                                 <label htmlFor="message" className="text-white">Write message here...</label>
                                             </div>
                                         </div>

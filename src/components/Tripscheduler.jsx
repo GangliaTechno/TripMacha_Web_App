@@ -92,7 +92,7 @@ const Tripscheduler = () => {
         setFromTime(formattedFromTime);
         setToTime(formattedFromTime);
 
-        const radius = 10;
+        const radius = "10";
         setRadius(radius)
 
     }, []);
@@ -246,7 +246,7 @@ const Tripscheduler = () => {
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <input
-                                                    type="number"
+                                                    type="string"
                                                     className="form-control bg-transparent shadow-none text-white"
                                                     id="radius"
                                                     value={radius}

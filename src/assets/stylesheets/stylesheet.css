@@ -430,6 +430,12 @@ nav {
     border-bottom: none;
 }
 
+.fa-envelope {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 10px;
+}
+
 /* Login & SignUp Ends */
 #suggestions-container {
     background-color: #ffffff00;
