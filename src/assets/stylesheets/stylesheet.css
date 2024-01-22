@@ -337,8 +337,8 @@ nav {
 }
 
 .btn-apple {
-    color: rgb(0, 0, 0);
-    background-color: #ffffff;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
     box-shadow: 0 1px 2px 1px #ddd;
     border: 1px solid black;
     text-decoration: none;
@@ -347,9 +347,9 @@ nav {
 }
 
 .btn-apple:hover {
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
-    background-color: #ffffff;
+    background-color: #000000;
     transition: all .42s;
 }
 
@@ -428,6 +428,18 @@ nav {
 
 .signin_modal .nav-tabs {
     border-bottom: none;
+}
+
+.fa-envelope {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 5px;
+}
+
+.fa-apple {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 10px;
 }
 
 /* Login & SignUp Ends */
