@@ -130,6 +130,10 @@ nav {
 
 /* Navbar Ends */
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Service Section starts */
 .service-item {
     box-shadow: rgba(0, 0, 0, 0.2) -4px 9px 25px -6px;
