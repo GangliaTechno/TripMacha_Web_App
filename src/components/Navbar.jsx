@@ -34,6 +34,17 @@ const Navbar = () => {
         
     }
 
+  const recommendation = useRef(null);
+  const services = useRef(null);
+  const contact = useRef(null);
+
+  const scrollToSection = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: 'smooth',
+    })
+  }
+
     //Taking the reference of login button and clicking it automatically upon loading
     const loginbtnRef = useRef();
     const autoOpenClick = () => {
@@ -63,10 +74,10 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <div className="navbar-nav ms-auto py-0">
-                        <Link to="/" className="nav-item nav-link active">Home</Link>
-                        <Link to="/recommendation" className="nav-item nav-link">Recommendations</Link>
-                        <Link to="/services" className="nav-item nav-link">Services</Link>
-                        <Link to="/contact" className="nav-item nav-link">Contact us</Link>
+                        <Link to="#home" className="nav-item nav-link" onClick={() => scrollToSection(home)}>Home</Link>
+                        <Link to="#recommendation" className="nav-item nav-link" onClick={() => scrollToSection(recommendation)}>Recommendations</Link>
+                        <Link to="#services" className="nav-item nav-link" onClick={() => scrollToSection(services)}>Services</Link>
+                        <Link to="#contact" className="nav-item nav-link" onClick={() => scrollToSection(contact)}>Contact us</Link>
                     </div>
                     {
                         (authUser !== null) ? (
