@@ -130,10 +130,6 @@ const Login = () => {
                                         Sign in using Apple
                                     </a>
                                 </div>
-                                <div className="col-md-12 mt-3">
-                                    <a onClick={mailnotify} className="btn-lg btn-mail rounded-pill btn-block fs-6 my-3" href="#"><i class="fa-regular fa-envelope fa-xl"></i> Sign in using Email and Password
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     </div>
