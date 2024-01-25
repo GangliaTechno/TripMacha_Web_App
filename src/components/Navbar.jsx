@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,6 +8,61 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
+    const [activeLink, setActiveLink] = useState('false');
+    const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
+
+
+    const handleScroll = () => {
+        setScrollPosition({ x: window.scrollX, y: window.scrollY });
+    };
+
+    useEffect(() => {
+        // Add scroll event listener when the component mounts
+        window.addEventListener('scroll', handleScroll);
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []); // Empty dependency array ensures the effect runs only once when the component mounts
+
+    // Function to determine the active link based on scroll position
+    const determineActiveLink = () => {
+        // Logic to determine which section is currently in view
+        // For simplicity, you may need to adjust this based on your specific layout and section heights
+        const homeSection = document.getElementById('home');
+        const recommendationSection = document.getElementById('recommendation');
+        const servicesSection = document.getElementById('services');
+        const contactSection = document.getElementById('contact');
+
+        if (
+            scrollPosition.y >= homeSection.offsetTop &&
+            scrollPosition.y < recommendationSection.offsetTop
+        ) {
+            return 'home';
+        } else if (
+            scrollPosition.y >= recommendationSection.offsetTop &&
+            scrollPosition.y < servicesSection.offsetTop
+        ) {
+            return 'recommendation';
+        } else if (
+            scrollPosition.y >= servicesSection.offsetTop &&
+            scrollPosition.y < contactSection.offsetTop
+        ) {
+            return 'services';
+        } else if (scrollPosition.y >= contactSection.offsetTop) {
+            return 'contact';
+        } else {
+            return ''; // No section is in view
+        }
+    };
+
+    // Update the active link whenever the scroll position changes
+    useEffect(() => {
+        const active = determineActiveLink();
+        setActiveLink(active);
+    }, [scrollPosition]);
+
 
     const {
         authUser,
@@ -31,19 +86,23 @@ const Navbar = () => {
         setTimeout(() => {
             window.location.reload();
         }, 1000);
-        
+
     }
 
-  const recommendation = useRef(null);
-  const services = useRef(null);
-  const contact = useRef(null);
+    const recommendation = useRef(null);
+    const services = useRef(null);
+    const contact = useRef(null);
 
-  const scrollToSection = (elementRef) => {
-    window.scrollTo({
-      top: elementRef.current.offsetTop,
-      behavior: 'smooth',
-    })
-  }
+    const scrollToSection = (elementRef, section) => {
+        setActiveLink(section);
+
+        window.scrollTo({
+            top: elementRef.current.offsetTop,
+            behavior: 'smooth',
+
+
+        })
+    }
 
     //Taking the reference of login button and clicking it automatically upon loading
     const loginbtnRef = useRef();
@@ -61,11 +120,13 @@ const Navbar = () => {
         }
     }, []);
 
+
+
     return (
         <>
             <ToastContainer />
             {/* Navigation bar starts */}
-            <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 shadow-sm">
+            <nav className="navbar navbar-expand-lg navbar-light left-50 px-lg-5 py-3 py-lg-0 shadow-sm">
                 <Link to="/" className="navbar-brand p-0">
                     <h1 className="text-primary m-0"><span style={{ color: '#37249D' }}><i className="fa fa-map-marked-alt me-3"></i>Trip</span><span style={{ color: "red" }}>Macha</span></h1>
                 </Link>
@@ -73,18 +134,49 @@ const Navbar = () => {
                     <span className="fa fa-bars"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
-                    <div className="navbar-nav ms-auto py-0">
-                        <Link to="#home" className="nav-item nav-link" onClick={() => scrollToSection(home)}>Home</Link>
-                        <Link to="#recommendation" className="nav-item nav-link" onClick={() => scrollToSection(recommendation)}>Recommendations</Link>
-                        <Link to="#services" className="nav-item nav-link" onClick={() => scrollToSection(services)}>Services</Link>
-                        <Link to="#contact" className="nav-item nav-link" onClick={() => scrollToSection(contact)}>Contact us</Link>
+                    <div className='navbox'>
+                        <div className="navbar-nav ms-auto py-0">
+                            <Link
+                                exact
+                                to="#home"
+                                id="a"
+                                className={`nav-item nav-link ${activeLink === 'home' ? 'active' : ''} text-white`}
+                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                            >
+                                Home
+                            </Link>
+                            <Link
+                                to="#recommendation"
+                                className={`nav-item nav-link ${activeLink === 'recommendation' ? 'active' : ''}`}
+                                onClick={() => window.scrollTo({ top: recommendationSection.offsetTop, behavior: 'smooth' })}
+                            >
+                                Recommendations
+                            </Link>
+                            <Link
+                                to="#services"
+                                className={`nav-item nav-link ${activeLink === 'services' ? 'active' : ''}`}
+                                onClick={() => window.scrollTo({ top: servicesSection.offsetTop, behavior: 'smooth' })}
+                            >
+                                Services
+                            </Link>
+                            <Link
+                                to="#contact"
+                                className={`nav-item nav-link ${activeLink === 'contact' ? 'active' : ''}`}
+                                onClick={() => window.scrollTo({ top: contactSection.offsetTop, behavior: 'smooth' })}
+                            >
+                                Contact us
+                            </Link>
+                        </div>
+
+                        {/* Your other component content */}
                     </div>
+
                     {
                         (authUser !== null) ? (
                             (authUser.isAnonymous === true) ?
                                 (
                                     <li className="nav-item dropdown" id="loginGuestDD">
-                                        <a className="nav-link dropdown-toggle fs-5 px-0" style={{color: "#37249D"}} href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a className="nav-link dropdown-toggle fs-5 px-0" style={{ color: "#37249D" }} href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Guest Login
                                         </a>
                                         <div className="dropdown-menu" style={{ right: "0", minWidth: "0", marginRight: "-26px", width: "150px" }}>
@@ -98,7 +190,7 @@ const Navbar = () => {
                                     </li>
                                 ) : (
                                     <li className="nav-item dropdown" id="loginGuestDD">
-                                        <a className="nav-link dropdown-toggle fs-5 px-0" style={{color: "#37249D"}} href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a className="nav-link dropdown-toggle fs-5 px-0" style={{ color: "#37249D" }} href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             {authUser.displayName}
                                         </a>
                                         <div className="dropdown-menu" style={{ right: "0", minWidth: "0", marginRight: "-26px", width: "200px" }}>
