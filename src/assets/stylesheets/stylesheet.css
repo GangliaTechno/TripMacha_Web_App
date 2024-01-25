@@ -28,6 +28,13 @@ body::-webkit-scrollbar {
     text-decoration: none;
 }
 
+#navbarCollapse {
+    display: flex;
+    justify-content: end;
+    position: relative;
+
+}
+
 /* Navbar Starts */
 @media only screen and (max-width: 1299px) and (min-width: 992px) {
     .topbar {
@@ -57,6 +64,7 @@ nav {
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
     color: #37249D !important;
+
 }
 
 .navbar-light .navbar-brand img {
@@ -76,6 +84,7 @@ nav {
 
     .navbar-light .navbar-collapse {
         margin-top: 15px;
+        margin-left: 40px;
         border-top: 1px solid #DDDDDD;
     }
 
@@ -133,6 +142,8 @@ nav {
 html {
     scroll-behavior: smooth;
 }
+
+
 
 /* Service Section starts */
 .service-item {
@@ -280,6 +291,7 @@ html {
     padding-right: 0;
     border-radius: none;
 }
+
 
 .flink {
     text-align: left;
