@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useDebugValue, useEffect } from 'react'
 import { useAuth } from '../context/AuthContext';
 
 
 
-const Iterneries = (props) => {
+const Iterneries_2 = (props) => {
     const {
         authUser,
 
@@ -22,22 +22,19 @@ const Iterneries = (props) => {
     } = useAuth();
 
     useEffect(() => {
-        if (response1)
-            console.log(JSON.stringify(response1))
-    }, [response1])
+        if (response2)
+            console.log(JSON.stringify(response2))
+    }, [response2])
 
     function capitalizeFirstLetter(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
     return (
         <>
-            <h6 className="bg-white text-center px-3 fs-3 mt-5" style={{ color: "#37249D" }}>Quick Iternery Plan</h6>
-            <h2 className="mb-5 text-center">Here is your iternery plans</h2>
-            <div className="container py-5">
-                <div className="main-timeline-4 text-white" style={{ content: null }}>
-                    {
-                        response1 !== null ?
-                            response1.plan.map((place, index) => (
+        <div className="main-timeline-4 text-white" style={{content:null}}>
+                        {
+                            response2 !== null ?
+                            response2.plan.map((place, index) => (
                                 <div className={`timeline-4 ${index % 2 === 0 ? 'left-4' : 'right-4'}`} key={index}>
                                     <div className="card">
                                         <div className="card-body p-4 gradient-custom">
@@ -50,10 +47,9 @@ const Iterneries = (props) => {
                                         </div>
                                     </div>
                                 </div>
-                            )) : <h2 style={{ color: "black", textAlign: "center" }}>Generating plan...</h2>
-                    }
-                </div>
-            </div>
+                            )): <h2 style={{color:"black",textAlign:"center"}}>Generating plan...</h2>
+                        }
+        </div>
         </>
     )
 }
@@ -63,5 +59,5 @@ const Iterneries = (props) => {
 
 
 
-export default Iterneries
+export default Iterneries_2
 

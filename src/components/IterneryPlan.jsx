@@ -5,6 +5,8 @@ import { faBookmark as faBookmarkSlash } from '@fortawesome/free-regular-svg-ico
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Iterneries from './Iterneries';
+import Iterneries_2 from './Iterneries_2';
+import Iterneries_3 from './Iterneries_3';
 import { useAuth } from '../context/AuthContext'
 
 const IterneryPlan = () => {
@@ -373,8 +375,8 @@ const IterneryPlan = () => {
       {/* Iternary Section Ends */}
 
       {isHidden1 && <Iterneries/>}
-      {isHidden2 && <Iterneries />}
-      {isHidden3 && <Iterneries />}
+      {isHidden2 && <Iterneries_2 />}
+      {isHidden3 && <Iterneries_3 />}
     </>
   )
 }
