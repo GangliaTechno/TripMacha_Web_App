@@ -31,6 +31,8 @@ const Iterneries_2 = (props) => {
     }
     return (
         <>
+        <h2 className="mb-5 text-center">Here is another iternery plan</h2>
+        <div className="container py-5">
         <div className="main-timeline-4 text-white" style={{content:null}}>
                         {
                             response2 !== null ?
@@ -49,6 +51,7 @@ const Iterneries_2 = (props) => {
                                 </div>
                             )): <h2 style={{color:"black",textAlign:"center"}}>Generating plan...</h2>
                         }
+        </div>
         </div>
         </>
     )

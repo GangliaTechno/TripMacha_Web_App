@@ -21,7 +21,7 @@ const Iterneries = (props) => {
         response3,
     } = useAuth();
 
-    useEffect(() => {
+    useEffect(() => { 
         if (response1)
             console.log(JSON.stringify(response1))
     }, [response1])
