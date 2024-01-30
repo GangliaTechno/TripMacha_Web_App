@@ -50,7 +50,7 @@ const Iterneries = (props) => {
                                         </div>
                                     </div>
                                 </div>
-                            )) : <h2 style={{ color: "black", textAlign: "center" }}>Generating plan...</h2>
+                            )) : <h2 style={{ color: "black", textAlign: "center"}} >Generating plan...</h2>
                     }
                 </div>
             </div>
