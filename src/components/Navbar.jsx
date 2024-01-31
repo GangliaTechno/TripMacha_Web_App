@@ -121,28 +121,28 @@ const Navbar = () => {
                                 to="#home"
                                 id="a"
                                 className={`nav-item nav-link ${activeLink === 'home' ? 'active' : ''} text-white`}
-                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                onClick={() => scrollToSection(null, 'home')}
                             >
                                 Home
                             </Link>
                             <Link
                                 to="#recommendation"
                                 className={`nav-item nav-link ${activeLink === 'recommendation' ? 'active' : ''}`}
-                                onClick={() => window.scrollTo({ top: recommendation?.current?.offsetTop || 0, behavior: 'smooth' })}
+                                onClick={() => scrollToSection(recommendation, 'recommendation')}
                             >
                                 Recommendations
                             </Link>
                             <Link
                                 to="#services"
                                 className={`nav-item nav-link ${activeLink === 'services' ? 'active' : ''}`}
-                                onClick={() => window.scrollTo({ top: services?.current?.offsetTop || 0, behavior: 'smooth' })}
+                                onClick={() => scrollToSection(services, 'services')}
                             >
                                 Services
                             </Link>
                             <Link
                                 to="#contact"
                                 className={`nav-item nav-link ${activeLink === 'contact' ? 'active' : ''}`}
-                                onClick={() => window.scrollTo({ top: contact?.current?.offsetTop || 0, behavior: 'smooth' })}
+                                onClick={() => scrollToSection(contact, 'contact')}
                             >
                                 Contact us
                             </Link>
