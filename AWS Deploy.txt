@@ -1,0 +1,12 @@
+TO DEPLOY A VITE.JS PROJECT:-
+
+npm run build(creates a dist file for production purpose)
+serve -s dist
+TO KEEP THE IPADRESS RUNNIG IN THE BACKGROUND:- 
+npm install -g pm2
+pm2 start serve -s dist 
+     (or)
+pm2 serve dist 3000 -spa(makes it run in 3000 port)
+pm2 stop all(stops all ports)
+pm2 delete all (deletes all ports)
+pm2 logs
