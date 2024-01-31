@@ -19,18 +19,6 @@ const Login = () => {
         theme: "dark",
     });
 
-    //When Signin with Email and Password is clicked
-    const mailnotify = () => toast.info('Feature Not supported yet.', {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-    });
-
     //When Login Clicked Username to be displayed 
     const {
         isLoggedIn,
