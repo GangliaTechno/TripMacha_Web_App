@@ -326,7 +326,7 @@ const Tripscheduler = () => {
                                                  onClick={async () => {
                                                      let r1 = await handleSubmit().then((data)=>{return JSON.stringify(data)})
                                                      setResponse1(JSON.parse(JSON.parse(r1))) 
-                                          let r2 = await handleSubmit().then((data)=>{return JSON.stringify(data)})
+                                                     let r2 = await handleSubmit().then((data)=>{return JSON.stringify(data)})
                                                      setResponse2(JSON.parse(JSON.parse(r2)))
                                                      let r3 = await handleSubmit().then((data)=>{return JSON.stringify(data)})
                                                      setResponse3(JSON.parse(JSON.parse(r3)))
