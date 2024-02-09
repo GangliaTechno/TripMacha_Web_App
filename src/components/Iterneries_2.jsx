@@ -45,7 +45,7 @@ const Iterneries_2 = (props) => {
                                             <p className="mt-3">Activity: <span>{place === null ? "NULL" : capitalizeFirstLetter(place.activity)}</span></p>
                                             <p>Distance: <span>{place === null ? "NULL" : place.distance}</span></p>
                                             <p>Travel-Time: <span>{place === null ? "NULL" : place["travel time"]}</span></p>
-                                            <a className="btn" style={{ backgroundColor: "white", color: "black" }} href="#" role="button">Open in Maps</a>
+                                            <a className="btn" style={{ backgroundColor: "white", color: "black" }} href={"https://www.google.com/maps/search/" + place.location} target='_blank' role="button">Open in Maps</a>
                                         </div>
                                     </div>
                                 </div>
