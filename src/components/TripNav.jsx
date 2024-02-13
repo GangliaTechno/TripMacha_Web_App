@@ -1,65 +1,81 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faArrowRightFromBracket, faBookmark } from '@fortawesome/free-solid-svg-icons';
 import guestImage from '../assets/img/guest.png';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Navbar = () => {
+const TripNav = () => {
     const [activeLink, setActiveLink] = useState('');
     const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
+    const navigate = useNavigate();
 
     const handleScroll = () => {
         setScrollPosition({ x: window.scrollX, y: window.scrollY });
     };
 
+    const { authUser, setAuthUser } = useAuth();
+
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
+        const handleRouteChange = () => {
+            const hash = window.location.hash;
+            if (hash) {
+                const id = hash.replace('#', '');
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        };
+
+        window.addEventListener('hashchange', handleRouteChange);
+        handleRouteChange();
+
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('hashchange', handleRouteChange);
         };
     }, []);
 
-    const determineActiveLink = () => {
+    useEffect(() => {
         const homeSection = document.getElementById('home');
         const recommendationSection = document.getElementById('recommendation');
         const servicesSection = document.getElementById('services');
         const contactSection = document.getElementById('contact');
 
-        if (homeSection && recommendationSection && servicesSection && contactSection) {
-            if (
-                scrollPosition.y >= homeSection.offsetTop &&
-                scrollPosition.y < recommendationSection.offsetTop
-            ) {
-                return 'home';
-            } else if (
-                scrollPosition.y >= recommendationSection.offsetTop &&
-                scrollPosition.y < servicesSection.offsetTop
-            ) {
-                return 'recommendation';
-            } else if (
-                scrollPosition.y >= servicesSection.offsetTop &&
-                scrollPosition.y < contactSection.offsetTop
-            ) {
-                return 'services';
-            } else if (scrollPosition.y >= contactSection.offsetTop) {
-                return 'contact';
+        const determineActiveLink = () => {
+            if (homeSection && recommendationSection && servicesSection && contactSection) {
+                if (
+                    scrollPosition.y >= homeSection.offsetTop &&
+                    scrollPosition.y < recommendationSection.offsetTop
+                ) {
+                    return 'home';
+                } else if (
+                    scrollPosition.y >= recommendationSection.offsetTop &&
+                    scrollPosition.y < servicesSection.offsetTop
+                ) {
+                    return 'recommendation';
+                } else if (
+                    scrollPosition.y >= servicesSection.offsetTop &&
+                    scrollPosition.y < contactSection.offsetTop
+                ) {
+                    return 'services';
+                } else if (scrollPosition.y >= contactSection.offsetTop) {
+                    return 'contact';
+                }
             }
-        }
 
-        return '';
-    };
+            return '';
+        };
 
-    useEffect(() => {
         const active = determineActiveLink();
         setActiveLink(active);
     }, [scrollPosition]);
 
-    const { authUser, setAuthUser } = useAuth();
-
-    const logOut = (e) => {
+    const logOut = () => {
         toast('Logged Out Successfully!', {
             position: 'top-center',
             autoClose: 1000,
@@ -75,29 +91,24 @@ const Navbar = () => {
         setTimeout(() => {
             window.location.reload();
         }, 1000);
-    }
+    };
 
-    const recommendation = useRef(null);
-    const services = useRef(null);
-    const contact = useRef(null);
-
-    const scrollToSection = (elementRef, section) => {
+    const scrollToSection = (section) => {
         setActiveLink(section);
+        if (section === 'home') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            navigate(`#${section}`);
+        }
+    };
 
-        window.scrollTo({
-            top: elementRef.current.offsetTop,
-            behavior: 'smooth',
-        })
-    }
-
-    const loginbtnRef = useRef();
     const autoOpenClick = () => {
-        loginbtnRef.current.click();
-    }
+        // handle auto open modal
+    };
 
     useEffect(() => {
         if (authUser !== null) {
-            console.log("Already Logged In")
+            console.log('Already Logged In');
         } else {
             autoOpenClick();
         }
@@ -121,33 +132,32 @@ const Navbar = () => {
                                 to="/"
                                 id="a"
                                 className={`nav-item nav-link ${activeLink === 'home' ? 'active' : ''} text-white`}
-                                onClick={() => scrollToSection(null, 'home')}
+                                onClick={() => scrollToSection('home')}
                             >
                                 Home
                             </Link>
                             <Link
-                                to="#recommendation"
+                                to="/#recommendation"
                                 className={`nav-item nav-link ${activeLink === 'recommendation' ? 'active' : ''}`}
-                                onClick={() => scrollToSection(recommendation, 'recommendation')}
+                                onClick={() => scrollToSection('recommendation')}
                             >
                                 Recommendations
                             </Link>
                             <Link
-                                to="#services"
+                                to="/#services"
                                 className={`nav-item nav-link ${activeLink === 'services' ? 'active' : ''}`}
-                                onClick={() => scrollToSection(services, 'services')}
+                                onClick={() => scrollToSection('services')}
                             >
                                 Services
                             </Link>
                             <Link
-                                to="#contact"
+                                to="/#contact"
                                 className={`nav-item nav-link ${activeLink === 'contact' ? 'active' : ''}`}
-                                onClick={() => scrollToSection(contact, 'contact')}
+                                onClick={() => scrollToSection('contact')}
                             >
                                 Contact us
                             </Link>
                         </div>
-                        {/* Your other component content */}
                     </div>
 
                     {
@@ -164,7 +174,7 @@ const Navbar = () => {
                                                 <p className="mt-2 font-weight-bold">Guest Login</p>
                                             </div>
                                             <hr />
-                                            <a onClick={(e) => { logOut(e) }} className="dropdown-item bg-transparent text-center linkhover" href="#" id="btnlogout"><FontAwesomeIcon style={{ marginRight: "10px" }} icon={faArrowRightFromBracket} />Logout</a>
+                                            <a onClick={logOut} className="dropdown-item bg-transparent text-center linkhover" href="#" id="btnlogout"><FontAwesomeIcon style={{ marginRight: "10px" }} icon={faArrowRightFromBracket} />Logout</a>
                                         </div>
                                     </li>
                                 ) : (
@@ -183,7 +193,7 @@ const Navbar = () => {
                                                 <Link to="/Saved" className="text-decoration-none text-capitalize linkhover"><FontAwesomeIcon style={{ marginRight: "10px" }} icon={faBookmark} />Saved Trip Plans</Link>
                                             </div>
                                             <hr />
-                                            <a onClick={(e) => { logOut(e) }} className="dropdown-item bg-transparent text-center linkhover" href="#" id="btnlogout"><FontAwesomeIcon style={{ marginRight: "10px" }} icon={faArrowRightFromBracket} />Logout</a>
+                                            <a onClick={logOut} className="dropdown-item bg-transparent text-center linkhover" href="#" id="btnlogout"><FontAwesomeIcon style={{ marginRight: "10px" }} icon={faArrowRightFromBracket} />Logout</a>
                                         </div>
                                     </li>
                                 )
@@ -195,7 +205,7 @@ const Navbar = () => {
                 </div>
             </nav>
         </>
-    )
+    );
 }
 
-export default Navbar;
+export default TripNav;
