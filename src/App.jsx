@@ -4,7 +4,7 @@ import Recommendation from './components/Recommendation'
 import Services from './components/Services'
 import Contactus from './components/Contactus'
 import Footer from './components/Footer'
-//import Login from './components/Login'
+import Login from './components/Login'
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Backtotop from './components/Backtotop'
@@ -27,7 +27,7 @@ function App() {
             <div className="container-fluid position-relative p-0">
 
               {/* Login/SignUp Modal */}
-              {/* <Login /> */}
+              <Login />
             </div>
           </section>
           {/* Navigation bar ends */}
