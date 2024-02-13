@@ -29,6 +29,9 @@ const Iterneries = (props) => {
     function capitalizeFirstLetter(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
+
+    // const placeName = require("./Tripscheduler.js");
+
     return (
         <>
             <h6 className="bg-white text-center px-3 fs-3 mt-5" style={{ color: "#37249D" }}>Quick Iternery Plan</h6>
@@ -46,7 +49,7 @@ const Iterneries = (props) => {
                                             <p className="mt-3">Activity: <span>{place === null ? "NULL" : capitalizeFirstLetter(place.activity)}</span></p>
                                             <p>Distance: <span>{place === null ? "NULL" : place.distance}</span></p>
                                             <p>Travel-Time: <span>{place === null ? "NULL" : place["travel time"]}</span></p>
-                                            <a className="btn" style={{ backgroundColor: "white", color: "black" }} href="#" role="button">Open in Maps</a>
+                                            <a className="btn" style={{ backgroundColor: "white", color: "black" }} href={"https://www.google.com/maps/search/" + place.location} target='_blank' role="button">Open in Maps</a>
                                         </div>
                                     </div>
                                 </div>
