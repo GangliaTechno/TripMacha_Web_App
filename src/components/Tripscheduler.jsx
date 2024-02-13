@@ -323,18 +323,18 @@ const Tripscheduler = () => {
                                                     className="btn btn-outline-light w-100 py-3 shadow-none"
                                                     type="submit"
                                                     id="btnlocate"
-                                                 onClick={async () => {
-                                                     let r1 = await handleSubmit().then((data)=>{return JSON.stringify(data)})
-                                                     setResponse1(JSON.parse(JSON.parse(r1))) 
-                                                     let r2 = await handleSubmit().then((data)=>{return JSON.stringify(data)})
-                                                     setResponse2(JSON.parse(JSON.parse(r2)))
-                                                     let r3 = await handleSubmit().then((data)=>{return JSON.stringify(data)})
-                                                     setResponse3(JSON.parse(JSON.parse(r3)))
-                                                  
-                                                     // setResponse2(handleSubmit().then((data)=>{return data}))
-                                                     // setResponse3(handleSubmit().then((data)=>{return data}))
-                                                 }
-                                                 }
+                                                    onClick={async () => {
+                                                        let r1 = await handleSubmit().then((data) => { return JSON.stringify(data) })
+                                                        setResponse1(JSON.parse(JSON.parse(r1)))
+                                                        let r2 = await handleSubmit().then((data) => { return JSON.stringify(data) })
+                                                        setResponse2(JSON.parse(JSON.parse(r2)))
+                                                        let r3 = await handleSubmit().then((data) => { return JSON.stringify(data) })
+                                                        setResponse3(JSON.parse(JSON.parse(r3)))
+
+                                                        // setResponse2(handleSubmit().then((data)=>{return data}))
+                                                        // setResponse3(handleSubmit().then((data)=>{return data}))
+                                                    }
+                                                    }
                                                 >Locate Now</button>
                                             </Link>
                                         </div>

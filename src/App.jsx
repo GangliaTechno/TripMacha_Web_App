@@ -1,10 +1,10 @@
-import Navbar from './components/Navbar'
+
 import Tripscheduler from './components/Tripscheduler'
 import Recommendation from './components/Recommendation'
 import Services from './components/Services'
 import Contactus from './components/Contactus'
 import Footer from './components/Footer'
-import Login from './components/Login'
+//import Login from './components/Login'
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Backtotop from './components/Backtotop'
@@ -12,6 +12,8 @@ import { AuthProvider } from './context/AuthContext'
 import IterneryPlan from './components/IterneryPlan'
 import Liked from './components/Liked'
 import Saved from './components/Saved'
+import Navbar from './components/Navbar'
+import TripNav from './components/TripNav'
 
 function App() {
 
@@ -23,9 +25,9 @@ function App() {
           {/* Navigation bar starts*/}
           <section id="home">
             <div className="container-fluid position-relative p-0">
-              <Navbar />
+
               {/* Login/SignUp Modal */}
-              <Login />
+              {/* <Login /> */}
             </div>
           </section>
           {/* Navigation bar ends */}
@@ -34,6 +36,7 @@ function App() {
 
             <Route exact path='/' element={
               <>
+                <Navbar />
                 {/* Trip Scheduler Plan starts */}
                 <section id="tripScheduler">
                   <Tripscheduler />
@@ -96,6 +99,7 @@ function App() {
 
             <Route exact path='/Tripscheduler' element={
               <>
+                <TripNav />
                 {/* Trip Iternery Section starts */}
                 <section id="iternery">
                   <IterneryPlan />
@@ -123,7 +127,7 @@ function App() {
                 {/* Saved Section ends */}
               </>}>
             </Route>
-            
+
           </Routes>
 
           {/* Footer Section starts */}
